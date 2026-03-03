@@ -1,0 +1,323 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Variáveis globais ──────────────────────────────── */
+:root {
+  --cream:      #FAF8F4;
+  --sage:       #6B9972;
+  --sage-light: #9EC4A4;
+  --sage-dark:  #4A7050;
+  --sage-pale:  #EEF5EF;
+  --gold:       #C4943E;
+  --gold-light: #EDD89F;
+  --blush:      #F0E6E0;
+  --charcoal:   #2D2825;
+  --charcoal-soft: #6B5E57;
+}
+
+/* ─── Base ───────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--cream);
+  color: var(--charcoal);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Tipografia ────────────────────────────────────── */
+.font-display {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* ─── Animações Scroll ─────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-36px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(36px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Delay helpers */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+.delay-500 { transition-delay: 0.5s; }
+
+/* ─── NavBar ────────────────────────────────────────── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1rem 2rem;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.navbar.scrolled {
+  background: rgba(250, 248, 244, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 24px rgba(107, 153, 114, 0.12);
+}
+
+/* ─── Hero ──────────────────────────────────────────── */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: 9999px;
+  background: rgba(107, 153, 114, 0.12);
+  border: 1px solid rgba(107, 153, 114, 0.3);
+  color: var(--sage-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ─── Foto da Dra. ──────────────────────────────────── */
+.photo-wrapper {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.photo-frame {
+  position: relative;
+  width: 340px;
+  height: 440px;
+  border-radius: 60% 40% 55% 45% / 50% 45% 55% 50%;
+  background: linear-gradient(160deg, #C8DECC 0%, #9EC4A4 50%, #6B9972 100%);
+  overflow: hidden;
+  box-shadow:
+    0 20px 60px rgba(107, 153, 114, 0.3),
+    0 4px 16px rgba(107, 153, 114, 0.2);
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Monograma fallback quando foto não está disponível */
+.photo-monogram {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.photo-ring {
+  position: absolute;
+  inset: -12px;
+  border-radius: 60% 40% 55% 45% / 50% 45% 55% 50%;
+  border: 2px dashed rgba(107, 153, 114, 0.4);
+  animation: pulse-ring 3s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50%       { transform: scale(1.04); opacity: 0.2; }
+}
+
+/* ─── Botão WhatsApp ────────────────────────────────── */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  background: #25D366;
+  color: white;
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  text-decoration: none;
+}
+.btn-whatsapp:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+  background: #20c45d;
+}
+
+.btn-whatsapp-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: 9999px;
+  border: 2px solid #25D366;
+  color: #25D366;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.btn-whatsapp-outline:hover {
+  background: #25D366;
+  color: white;
+}
+
+/* Botão flutuante */
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 200;
+  width: 60px;
+  height: 60px;
+  border-radius: 9999px;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+}
+.whatsapp-float:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+}
+.whatsapp-float::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  background: rgba(37, 211, 102, 0.25);
+  animation: pulse-ring 2s ease-in-out infinite;
+}
+
+/* ─── Cards de Serviço ──────────────────────────────── */
+.service-card {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 2rem 1.75rem;
+  border: 1px solid rgba(107, 153, 114, 0.12);
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 16px rgba(107, 153, 114, 0.08);
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(107, 153, 114, 0.18);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 1rem;
+  background: var(--sage-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  font-size: 1.75rem;
+}
+
+/* ─── Cards de Depoimento ───────────────────────────── */
+.testimonial-card {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 2px 16px rgba(107, 153, 114, 0.08);
+  border: 1px solid rgba(107, 153, 114, 0.1);
+  position: relative;
+}
+.testimonial-card::before {
+  content: '"';
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--sage-light);
+  position: absolute;
+  top: 0.5rem;
+  left: 1.5rem;
+  opacity: 0.4;
+}
+
+/* ─── Divisor orgânico ──────────────────────────────── */
+.organic-divider {
+  position: relative;
+  height: 80px;
+  overflow: hidden;
+}
+
+/* ─── Folhas decorativas ────────────────────────────── */
+.leaf-decor {
+  position: absolute;
+  opacity: 0.12;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ─── Seção About ───────────────────────────────────── */
+.about-accent {
+  width: 4px;
+  background: linear-gradient(180deg, var(--sage) 0%, var(--gold) 100%);
+  border-radius: 9999px;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+/* ─── Benefit items ─────────────────────────────────── */
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.benefit-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 0.75rem;
+  background: white;
+  box-shadow: 0 2px 12px rgba(107, 153, 114, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+/* ─── Grain texture overlay ─────────────────────────── */
+.grain-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  pointer-events: none;
+}

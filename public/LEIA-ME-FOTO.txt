@@ -1,0 +1,31 @@
+══════════════════════════════════════════════════════════════
+  INSTRUÇÕES PARA ADICIONAR A FOTO DA DRA. VIVIANA
+══════════════════════════════════════════════════════════════
+
+1. Tire ou escolha uma foto profissional da Dra. Viviana
+
+2. Remova o fundo da foto usando um dos serviços gratuitos:
+   - https://www.remove.bg  (recomendado)
+   - https://www.canva.com  (editor > remover fundo)
+   - https://photoscissors.com
+
+3. Salve o arquivo com o nome exato:
+   foto-viviana.png
+
+4. Cole o arquivo NESTA PASTA (/public/)
+
+5. A landing page exibirá a foto automaticamente!
+
+══════════════════════════════════════════════════════════════
+  DICAS PARA UMA BOA FOTO:
+══════════════════════════════════════════════════════════════
+
+✓ Foto com fundo claro ou branco (facilita remoção do fundo)
+✓ Boa iluminação no rosto
+✓ Sorriso natural e acolhedor
+✓ Se possível, de jaleco branco
+✓ Resolução mínima: 600x800 pixels
+✓ Proporção ideal: retrato (mais alta que larga)
+✓ Formato PNG (transparência) ou JPG (convertido para PNG)
+
+══════════════════════════════════════════════════════════════

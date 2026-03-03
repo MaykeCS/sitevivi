@@ -11,9 +11,11 @@ const scrolled     = ref(false)
 const menuOpen     = ref(false)
 const photoLoaded  = ref(false)
 const photoError   = ref(false)
-// Usar binding dinâmico impede o Vite de tentar resolver a imagem
-// como asset estático durante o build (a foto é adicionada pelo usuário)
-const photoSrc     = '/foto-viviana-2.png'
+// Usar binding dinâmico impede o Vite de tentar resolver as imagens
+// como assets estáticos durante o build (arquivos adicionados pelo usuário)
+const photoSrc      = '/foto-viviana-2.png'
+const idosoSrc1     = '/imagem-idoso-1.png'
+const idosoSrc2     = '/imagem-idoso-2.png'
 
 const whatsappLink = 'https://wa.me/5511960661934'
 const whatsappMsg  = encodeURIComponent(
@@ -328,7 +330,7 @@ onMounted(() => {
                 overflow: hidden;
                 box-shadow: 0 20px 60px rgba(107,153,114,0.25);
               ">
-                <img src="/imagem-idoso-1.png" alt="Idosa recebendo fisioterapia"
+                <img :src="idosoSrc1" alt="Idosa recebendo fisioterapia"
                      style="width:100%; height:100%; object-fit:cover;">
               </div>
 
@@ -492,7 +494,7 @@ onMounted(() => {
           <div class="lg:w-1/2">
             <!-- Ilustração idoso em casa -->
             <div class="hidden lg:flex justify-start mb-8">
-              <img src="/imagem-idoso-2.png" alt="Atendimento domiciliar a idoso"
+              <img :src="idosoSrc2" alt="Atendimento domiciliar a idoso"
                    style="width:180px; height:130px; object-fit:cover; border-radius:1rem; opacity:0.85;">
             </div>
 

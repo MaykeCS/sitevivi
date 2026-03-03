@@ -209,7 +209,7 @@ onMounted(() => {
             </h1>
 
             <p class="reveal delay-200 mt-5 leading-relaxed" style="font-size:1.15rem; color:#6B5E57; max-width:440px;">
-              Fisioterapia e massagem terapêutica para seus familiares idosos,
+              Cuidado especializado e carinhoso para seus familiares idosos,
               <strong style="color:#4A7050; font-weight:700;">no conforto e segurança do lar.</strong>
             </p>
 
@@ -428,12 +428,7 @@ onMounted(() => {
               texto: 'Técnicas para melhorar a função pulmonar, a respiração e o bem-estar geral em casa.',
               cor: '#F0EDF8',
             },
-            {
-              emoji: '🤲',
-              titulo: 'Massagem Terapêutica',
-              texto: 'Massagens relaxantes e terapêuticas para alívio de tensões, dores musculares e melhora do bem-estar.',
-              cor: '#FDF0E8',
-            },
+            /* { emoji: '🤲', titulo: 'Massagem Terapêutica', texto: 'Massagens relaxantes e terapêuticas para alívio de tensões, dores musculares e melhora do bem-estar.', cor: '#FDF0E8' }, */
             {
               emoji: '👨‍👩‍👧',
               titulo: 'Orientação Familiar',

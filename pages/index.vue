@@ -325,38 +325,11 @@ onMounted(() => {
                 width: 280px; height: 280px;
                 background: linear-gradient(135deg, #9EC4A4 0%, #6B9972 100%);
                 border-radius: 60% 40% 50% 50% / 50% 55% 45% 55%;
-                display: flex; align-items: center; justify-content: center;
+                overflow: hidden;
                 box-shadow: 0 20px 60px rgba(107,153,114,0.25);
               ">
-                <!-- Ilustração: idosa sentada com fisioterapeuta ao lado -->
-                <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <!-- Idosa: cabeça -->
-                  <circle cx="70" cy="38" r="18" fill="white" opacity="0.9"/>
-                  <!-- Cabelo branco idosa -->
-                  <path d="M54 34C54 26 62 20 70 20C78 20 86 26 86 34" stroke="white" stroke-width="4" fill="none" opacity="0.5"/>
-                  <!-- Corpo idosa (sentada) -->
-                  <rect x="58" y="56" width="24" height="32" rx="8" fill="white" opacity="0.85"/>
-                  <!-- Pernas idosa -->
-                  <rect x="58" y="84" width="10" height="28" rx="5" fill="white" opacity="0.7"/>
-                  <rect x="72" y="84" width="10" height="28" rx="5" fill="white" opacity="0.7"/>
-                  <!-- Bengala -->
-                  <line x1="86" y1="112" x2="94" y2="70" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
-                  <line x1="90" y1="70" x2="98" y2="70" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
-                  <!-- Fisioterapeuta: cabeça -->
-                  <circle cx="140" cy="42" r="16" fill="white" opacity="0.9"/>
-                  <!-- Corpo fisio (jaleco) -->
-                  <rect x="128" y="58" width="24" height="36" rx="8" fill="white" opacity="0.85"/>
-                  <!-- Cruz no jaleco -->
-                  <rect x="137" y="68" width="6" height="2.5" rx="1.2" fill="#6B9972"/>
-                  <rect x="139" y="66" width="2.5" height="6" rx="1.2" fill="#6B9972"/>
-                  <!-- Pernas fisio -->
-                  <rect x="128" y="90" width="10" height="26" rx="5" fill="white" opacity="0.7"/>
-                  <rect x="142" y="90" width="10" height="26" rx="5" fill="white" opacity="0.7"/>
-                  <!-- Mão fisio tocando ombro da idosa -->
-                  <path d="M128 72 Q108 68 92 70" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
-                  <!-- Coração entre eles -->
-                  <path d="M105 48C105 48 101 44 98 47C95 50 98 54 105 58C112 54 115 50 112 47C109 44 105 48 105 48Z" fill="white" opacity="0.6"/>
-                </svg>
+                <img src="/imagem-idoso-1.png" alt="Idosa recebendo fisioterapia"
+                     style="width:100%; height:100%; object-fit:cover;">
               </div>
 
               <!-- Balão de fala / citação -->
@@ -519,35 +492,8 @@ onMounted(() => {
           <div class="lg:w-1/2">
             <!-- Ilustração idoso em casa -->
             <div class="hidden lg:flex justify-start mb-8">
-              <svg width="180" height="130" viewBox="0 0 180 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Casa simples -->
-                <path d="M30 70 L70 30 L110 70" stroke="rgba(255,255,255,0.4)" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
-                <rect x="40" y="70" width="60" height="50" rx="3" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
-                <!-- Porta -->
-                <rect x="60" y="90" width="20" height="30" rx="3" fill="rgba(255,255,255,0.2)"/>
-                <!-- Janela -->
-                <rect x="44" y="76" width="14" height="12" rx="2" fill="rgba(255,255,255,0.2)"/>
-                <!-- Idoso dentro: cabeça -->
-                <circle cx="70" cy="84" r="7" fill="rgba(255,255,255,0.7)"/>
-                <!-- Cabelo branco -->
-                <path d="M64 82C64 78 67 75 70 75C73 75 76 78 76 82" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none"/>
-                <!-- Corpo idoso -->
-                <rect x="64" y="91" width="12" height="16" rx="5" fill="rgba(255,255,255,0.6)"/>
-                <!-- Bengala (dentro de casa) -->
-                <line x1="77" y1="107" x2="80" y2="86" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/>
-                <!-- Coração flutuante -->
-                <path d="M140 25C140 25 137 21 134 24C131 27 134 31 140 35C146 31 149 27 146 24C143 21 140 25 140 25Z" fill="rgba(196,148,62,0.7)"/>
-                <!-- Seta indo até a casa -->
-                <path d="M145 60 Q130 55 115 70" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-dasharray="4 3" fill="none" marker-end="url(#arr)"/>
-                <!-- Fisioterapeuta caminhando -->
-                <circle cx="152" cy="50" r="10" fill="rgba(255,255,255,0.6)"/>
-                <rect x="146" y="60" width="12" height="18" rx="5" fill="rgba(255,255,255,0.55)"/>
-                <!-- Cruz no jaleco -->
-                <rect x="151" y="66" width="4" height="1.5" rx="0.7" fill="#6B9972"/>
-                <rect x="152.5" y="64.5" width="1.5" height="4" rx="0.7" fill="#6B9972"/>
-                <rect x="146" y="76" width="5" height="16" rx="3" fill="rgba(255,255,255,0.45)"/>
-                <rect x="153" y="76" width="5" height="16" rx="3" fill="rgba(255,255,255,0.45)"/>
-              </svg>
+              <img src="/imagem-idoso-2.png" alt="Atendimento domiciliar a idoso"
+                   style="width:180px; height:130px; object-fit:cover; border-radius:1rem; opacity:0.85;">
             </div>
 
             <p class="font-semibold text-sm uppercase tracking-widest reveal" style="color:#C4943E;">

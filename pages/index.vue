@@ -327,11 +327,59 @@ onMounted(() => {
                 width: 280px; height: 280px;
                 background: linear-gradient(135deg, #9EC4A4 0%, #6B9972 100%);
                 border-radius: 60% 40% 50% 50% / 50% 55% 45% 55%;
-                overflow: hidden;
+                display: flex; align-items: center; justify-content: center;
                 box-shadow: 0 20px 60px rgba(107,153,114,0.25);
               ">
                 <!-- <img :src="idosoSrc1" alt="Idosa recebendo fisioterapia"
                      style="width:100%; height:100%; object-fit:cover;"> -->
+
+                <!-- Vetoriais: coração + estetoscópio -->
+                <svg width="190" height="190" viewBox="0 0 190 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                  <!-- Coração grande -->
+                  <path d="M95 160
+                    C95 160 28 118 28 68
+                    C28 44 46 26 68 26
+                    C80 26 91 33 95 38
+                    C99 33 110 26 122 26
+                    C144 26 162 44 162 68
+                    C162 118 95 160 95 160Z"
+                    fill="white" opacity="0.92"/>
+
+                  <!-- Brilho interno do coração -->
+                  <path d="M68 44 C58 50 52 62 54 74"
+                    stroke="rgba(255,255,255,0.6)" stroke-width="5"
+                    stroke-linecap="round" fill="none"/>
+
+                  <!-- Estetoscópio: arco superior -->
+                  <path d="M72 88
+                    C72 72 84 62 95 62
+                    C106 62 118 72 118 88"
+                    stroke="#4A7050" stroke-width="5"
+                    stroke-linecap="round" fill="none"/>
+
+                  <!-- Estetoscópio: hastes (auriculares) -->
+                  <line x1="72" y1="88" x2="65" y2="106"
+                    stroke="#4A7050" stroke-width="5" stroke-linecap="round"/>
+                  <line x1="118" y1="88" x2="125" y2="106"
+                    stroke="#4A7050" stroke-width="5" stroke-linecap="round"/>
+
+                  <!-- Oliva esquerda -->
+                  <circle cx="65" cy="109" r="5" fill="#4A7050"/>
+                  <!-- Oliva direita -->
+                  <circle cx="125" cy="109" r="5" fill="#4A7050"/>
+
+                  <!-- Tubo descendo -->
+                  <path d="M95 62 L95 130"
+                    stroke="#4A7050" stroke-width="5"
+                    stroke-linecap="round"/>
+
+                  <!-- Campânula (círculo do estetoscópio) -->
+                  <circle cx="95" cy="138" r="14"
+                    fill="#4A7050"/>
+                  <circle cx="95" cy="138" r="8"
+                    fill="white" opacity="0.3"/>
+                </svg>
               </div>
 
               <!-- Balão de fala / citação -->

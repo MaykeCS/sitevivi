@@ -2,6 +2,9 @@
 useSeoMeta({
   title: 'Fisioterapia Domiciliar em São Paulo | Dra. Viviana Tavares Campos',
   description: 'Fisioterapia domiciliar para idosos nos bairros Saúde, São Judas e Praça da Árvore. Atendimento no conforto do seu lar. Agende pelo WhatsApp.',
+  ogTitle: 'Dra. Viviana — Fisioterapia Domiciliar · Zona Sul SP',
+  ogDescription: 'Fisioterapia domiciliar para idosos. Saúde, São Judas e Praça da Árvore. Atendimento no conforto do seu lar. Agende pelo WhatsApp.',
+  ogType: 'website',
 })
 
 const whatsappLink = 'https://wa.me/5511960661934'

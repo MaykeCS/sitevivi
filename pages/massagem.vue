@@ -2,6 +2,9 @@
 useSeoMeta({
   title: 'Dra. Viviana — Massagem Terapêutica',
   description: 'Massagem terapêutica especializada com Dra. Viviana Tavares Campos. Alívio de tensões, dores musculares e bem-estar. Agende sua sessão pelo WhatsApp.',
+  ogTitle: 'Dra. Viviana — Massagem Terapêutica',
+  ogDescription: 'Massagem terapêutica especializada. Alívio de tensões, dores musculares e bem-estar. Agende sua sessão pelo WhatsApp.',
+  ogType: 'website',
 })
 
 const whatsappLink = 'https://wa.me/5511960661934'

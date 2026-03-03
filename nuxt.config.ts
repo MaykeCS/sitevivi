@@ -27,6 +27,18 @@ export default defineNuxtConfig({
         },
         { property: 'og:type', content: 'website' },
       ],
+      script: [
+        {
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-6N9P11FETY',
+          async: true,
+        },
+        {
+          innerHTML: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-6N9P11FETY');`,
+        },
+      ],
       link: [
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },

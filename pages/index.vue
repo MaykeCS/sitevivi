@@ -586,7 +586,7 @@ onMounted(() => {
               ">V</div>
               <div>
                 <p style="margin:0; font-weight:700; color:#2D2825; font-size:0.95rem;">Dra. Viviana Tavares Campos</p>
-                <p style="margin:0; color:#9E8E87; font-size:0.8rem;">Fisioterapeuta · Especialista em Geriatria</p>
+                <p style="margin:0; color:#9E8E87; font-size:0.8rem;">Fisioterapeuta · CREFITO</p>
               </div>
             </div>
           </div>

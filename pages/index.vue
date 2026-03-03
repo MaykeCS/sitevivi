@@ -294,7 +294,7 @@ onMounted(() => {
                 <span style="font-size:1.3rem;">💚</span>
                 <div>
                   <p class="font-bold text-xs" style="color:#4A7050; margin:0; line-height:1.2;">Fisioterapeuta</p>
-                  <p class="text-xs" style="color:#9E8E87; margin:0; line-height:1.2;">CREFITO Registrada</p>
+                  <!-- <p class="text-xs" style="color:#9E8E87; margin:0; line-height:1.2;">CREFITO Registrada</p> -->
                 </div>
               </div>
 
@@ -586,7 +586,7 @@ onMounted(() => {
               ">V</div>
               <div>
                 <p style="margin:0; font-weight:700; color:#2D2825; font-size:0.95rem;">Dra. Viviana Tavares Campos</p>
-                <p style="margin:0; color:#9E8E87; font-size:0.8rem;">Fisioterapeuta · CREFITO</p>
+                <!-- <p style="margin:0; color:#9E8E87; font-size:0.8rem;">Fisioterapeuta · CREFITO</p> -->
               </div>
             </div>
           </div>
@@ -690,7 +690,7 @@ onMounted(() => {
           </svg>
           <div>
             <p class="font-display font-semibold text-white" style="font-size:0.95rem; margin:0;">Dra. Viviana Tavares Campos</p>
-            <p style="font-size:0.8rem; margin:0; color:rgba(255,255,255,0.45);">Fisioterapeuta · CREFITO</p>
+            <!-- <p style="font-size:0.8rem; margin:0; color:rgba(255,255,255,0.45);">Fisioterapeuta · CREFITO</p> -->
           </div>
         </div>
 

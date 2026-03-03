@@ -26,6 +26,13 @@ function waLink(msg = true) {
 
 // ─── Scroll listener ──────────────────────────────────────────────
 onMounted(() => {
+  // Imagem pode já estar carregada do cache antes do Vue attachar o @load
+  const imgEl = document.querySelector<HTMLImageElement>('.photo-frame img')
+  if (imgEl?.complete) {
+    if (imgEl.naturalWidth > 0) photoLoaded.value = true
+    else photoError.value = true
+  }
+
   const onScroll = () => { scrolled.value = window.scrollY > 40 }
   window.addEventListener('scroll', onScroll, { passive: true })
 
@@ -185,27 +192,27 @@ onMounted(() => {
 
           <!-- Texto (esquerda) -->
           <div class="order-2 lg:order-1">
-            <div class="hero-badge reveal" style="opacity:0;">
+            <div class="hero-badge reveal">
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <circle cx="6" cy="6" r="5" stroke="#4A7050" stroke-width="1.5"/>
                 <circle cx="6" cy="6" r="2" fill="#4A7050"/>
               </svg>
-              Fisioterapia Domiciliar · São Paulo
+              Fisioterapia Domiciliar · Saúde, São Judas e Praça da Árvore
             </div>
 
             <h1 class="font-display reveal delay-100 mt-5"
-                style="font-size:clamp(2.5rem,5vw,4rem); font-weight:600; line-height:1.12; letter-spacing:-0.01em; opacity:0;">
+                style="font-size:clamp(2.5rem,5vw,4rem); font-weight:600; line-height:1.12; letter-spacing:-0.01em;">
               Dra. Viviana<br>
               <span style="color:#6B9972;">Tavares Campos</span>
             </h1>
 
-            <p class="reveal delay-200 mt-5 leading-relaxed" style="font-size:1.15rem; color:#6B5E57; max-width:440px; opacity:0;">
+            <p class="reveal delay-200 mt-5 leading-relaxed" style="font-size:1.15rem; color:#6B5E57; max-width:440px;">
               Cuidado especializado e carinhoso para seus familiares idosos,
               <strong style="color:#4A7050; font-weight:700;">no conforto e segurança do lar.</strong>
             </p>
 
             <!-- Estrelinhas / credenciais sutis -->
-            <div class="reveal delay-300 flex flex-wrap gap-3 mt-7" style="opacity:0;">
+            <div class="reveal delay-300 flex flex-wrap gap-3 mt-7">
               <span v-for="tag in ['Formada em Fisioterapia','Atendimento Humanizado','Foco em Idosos','Domiciliar']"
                     :key="tag"
                     class="inline-flex items-center gap-1.5 text-sm font-semibold px-3 py-1.5 rounded-full"
@@ -216,7 +223,7 @@ onMounted(() => {
             </div>
 
             <!-- CTA buttons -->
-            <div class="reveal delay-400 flex flex-col sm:flex-row gap-4 mt-8" style="opacity:0;">
+            <div class="reveal delay-400 flex flex-col sm:flex-row gap-4 mt-8">
               <a :href="waLink()" target="_blank" rel="noopener" class="btn-whatsapp">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 Agendar pelo WhatsApp
@@ -312,7 +319,7 @@ onMounted(() => {
         <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
 
           <!-- Ilustração / ícone -->
-          <div class="lg:w-2/5 flex justify-center reveal-left" style="opacity:0;">
+          <div class="lg:w-2/5 flex justify-center reveal-left">
             <div class="relative">
               <!-- Blob decorativo -->
               <div style="
@@ -346,15 +353,15 @@ onMounted(() => {
 
           <!-- Texto -->
           <div class="lg:w-3/5">
-            <p class="font-semibold text-sm uppercase tracking-widest reveal" style="color:#C4943E; opacity:0;">
+            <p class="font-semibold text-sm uppercase tracking-widest reveal" style="color:#C4943E;">
               ✦ Sobre mim
             </p>
-            <h2 class="font-display reveal delay-100 mt-3" style="font-size:clamp(1.9rem,3.5vw,2.8rem); font-weight:600; line-height:1.18; opacity:0;">
+            <h2 class="font-display reveal delay-100 mt-3" style="font-size:clamp(1.9rem,3.5vw,2.8rem); font-weight:600; line-height:1.18;">
               Uma fisioterapeuta que<br>
               <em style="color:#6B9972;">cuida com o coração</em>
             </h2>
 
-            <div class="reveal delay-200 flex gap-4 mt-6" style="opacity:0;">
+            <div class="reveal delay-200 flex gap-4 mt-6">
               <div class="about-accent" />
               <p class="leading-relaxed text-lg" style="color:#6B5E57;">
                 Desde a graduação, o que me move é a <strong style="color:#2D2825;">certeza de que cada pessoa merece atenção
@@ -362,19 +369,19 @@ onMounted(() => {
               </p>
             </div>
 
-            <p class="reveal delay-300 leading-relaxed mt-5" style="color:#6B5E57; opacity:0;">
+            <p class="reveal delay-300 leading-relaxed mt-5" style="color:#6B5E57;">
               Recém-formada em Fisioterapia, escolhi o atendimento domiciliar porque acredito que
               o ambiente familiar faz parte do processo de cura. Aqui, você não precisa enfrentar
               o deslocamento — <strong style="color:#4A7050;">eu chego até você com dedicação e carinho.</strong>
             </p>
 
-            <p class="reveal delay-400 leading-relaxed mt-4" style="color:#6B5E57; opacity:0;">
+            <p class="reveal delay-400 leading-relaxed mt-4" style="color:#6B5E57;">
               Minha paixão são os idosos: pessoas que têm histórias lindas para contar e
               que merecem cada momento de cuidado com <em>paciência, leveza e muita atenção</em>.
             </p>
 
             <!-- Valores -->
-            <div class="reveal delay-500 grid grid-cols-3 gap-4 mt-8" style="opacity:0;">
+            <div class="reveal delay-500 grid grid-cols-3 gap-4 mt-8">
               <div v-for="valor in [
                 { emoji:'💛', label:'Empatia' },
                 { emoji:'🌿', label:'Respeito' },
@@ -397,13 +404,13 @@ onMounted(() => {
     <section id="servicos" class="py-24" style="background:#FAF8F4;">
       <div class="max-w-6xl mx-auto px-6">
         <div class="text-center max-w-2xl mx-auto mb-14">
-          <p class="font-semibold text-sm uppercase tracking-widest reveal" style="color:#C4943E; opacity:0;">
+          <p class="font-semibold text-sm uppercase tracking-widest reveal" style="color:#C4943E;">
             ✦ Serviços
           </p>
-          <h2 class="font-display reveal delay-100 mt-3" style="font-size:clamp(1.9rem,3.5vw,2.8rem); font-weight:600; line-height:1.18; opacity:0;">
+          <h2 class="font-display reveal delay-100 mt-3" style="font-size:clamp(1.9rem,3.5vw,2.8rem); font-weight:600; line-height:1.18;">
             Como posso te ajudar
           </h2>
-          <p class="reveal delay-200 mt-4 leading-relaxed" style="color:#6B5E57; font-size:1.05rem; opacity:0;">
+          <p class="reveal delay-200 mt-4 leading-relaxed" style="color:#6B5E57; font-size:1.05rem;">
             Cada atendimento é único, pensado no ritmo e nas necessidades de quem precisa de cuidado.
           </p>
         </div>
@@ -437,7 +444,7 @@ onMounted(() => {
           ]" :key="servico.titulo"
             class="service-card reveal"
             :class="`delay-${(i + 1) * 100}`"
-            style="opacity:0;"
+           
           >
             <div class="service-icon" :style="`background:${servico.cor};`">
               <span>{{ servico.emoji }}</span>
@@ -452,7 +459,7 @@ onMounted(() => {
         </div>
 
         <!-- CTA embaixo dos serviços -->
-        <div class="text-center mt-12 reveal" style="opacity:0;">
+        <div class="text-center mt-12 reveal">
           <p class="mb-5 text-base" style="color:#6B5E57;">
             Tem dúvidas sobre qual serviço é o ideal para sua família?
           </p>
@@ -486,14 +493,14 @@ onMounted(() => {
 
           <!-- Texto -->
           <div class="lg:w-1/2">
-            <p class="font-semibold text-sm uppercase tracking-widest reveal" style="color:#C4943E; opacity:0;">
+            <p class="font-semibold text-sm uppercase tracking-widest reveal" style="color:#C4943E;">
               ✦ Por que domiciliar?
             </p>
-            <h2 class="font-display reveal delay-100 mt-3 text-white" style="font-size:clamp(1.9rem,3.5vw,2.8rem); font-weight:600; line-height:1.18; opacity:0;">
+            <h2 class="font-display reveal delay-100 mt-3 text-white" style="font-size:clamp(1.9rem,3.5vw,2.8rem); font-weight:600; line-height:1.18;">
               O cuidado que vai<br>
               <em style="color:#9EC4A4;">até você</em>
             </h2>
-            <p class="reveal delay-200 mt-5 leading-relaxed" style="color:rgba(255,255,255,0.75); font-size:1.05rem; opacity:0;">
+            <p class="reveal delay-200 mt-5 leading-relaxed" style="color:rgba(255,255,255,0.75); font-size:1.05rem;">
               Para muitos idosos, o deslocamento até uma clínica é um obstáculo que infelizmente
               pode adiar o tratamento. Na fisioterapia domiciliar, esse problema deixa de existir.
             </p>
@@ -509,7 +516,7 @@ onMounted(() => {
             ]" :key="b.titulo"
               class="benefit-item reveal"
               :class="`delay-${(i + 1) * 100}`"
-              style="opacity:0;"
+             
             >
               <div class="benefit-icon" style="background:rgba(255,255,255,0.1); box-shadow:none;">
                 <span>{{ b.icon }}</span>
@@ -525,76 +532,92 @@ onMounted(() => {
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════ -->
-    <!--  DEPOIMENTOS                                                -->
+    <!--  MANIFESTO / VOZ DA DRA.                                   -->
     <!-- ═══════════════════════════════════════════════════════════ -->
-    <section id="depoimentos" class="py-24" style="background:#FAF8F4;">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center max-w-xl mx-auto mb-14">
-          <p class="font-semibold text-sm uppercase tracking-widest reveal" style="color:#C4943E; opacity:0;">
-            ✦ Depoimentos
-          </p>
-          <h2 class="font-display reveal delay-100 mt-3" style="font-size:clamp(1.9rem,3.5vw,2.6rem); font-weight:600; line-height:1.2; opacity:0;">
-            O que as famílias dizem
-          </h2>
-          <p class="reveal delay-200 mt-4" style="color:#6B5E57; opacity:0; font-size:0.9rem;">
-            Depoimentos em breve. Seja um dos primeiros a compartilhar sua experiência! 😊
-          </p>
-        </div>
+    <section class="py-24" style="background:#FAF8F4;">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="reveal" style="
+          background: white;
+          border-radius: 2rem;
+          padding: 3rem 3.5rem;
+          box-shadow: 0 8px 48px rgba(107,153,114,0.12);
+          border: 1px solid rgba(107,153,114,0.15);
+          position: relative;
+        ">
+          <!-- Aspas decorativas -->
+          <span style="
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 8rem;
+            line-height: 1;
+            color: #9EC4A4;
+            position: absolute;
+            top: 0.5rem;
+            left: 2rem;
+            opacity: 0.35;
+            pointer-events: none;
+          ">"</span>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div v-for="(dep, i) in [
-            {
-              nome: 'Maria Helena, 72 anos',
-              relacao: 'Paciente',
-              texto: 'Um espaço reservado para o seu depoimento. Entre em contato e compartilhe sua experiência conosco!',
-              estrelas: 5,
-              iniciais: 'MH',
-              cor: '#EEF5EF',
-            },
-            {
-              nome: 'Carlos e família',
-              relacao: 'Familiar do paciente',
-              texto: 'Adoraríamos ouvir como foi o atendimento domiciliar para a sua família. Deixe sua mensagem!',
-              estrelas: 5,
-              iniciais: 'CF',
-              cor: '#FDF8EE',
-            },
-            {
-              nome: 'Seu nome aqui',
-              relacao: 'Paciente ou familiar',
-              texto: 'Em breve este espaço estará cheio de histórias de cuidado e recuperação. Venha fazer parte!',
-              estrelas: 5,
-              iniciais: '✦',
-              cor: '#F0E6E0',
-            },
-          ]" :key="dep.nome"
-            class="testimonial-card reveal"
-            :class="`delay-${(i + 1) * 100}`"
-            style="opacity:0;"
-          >
-            <!-- Estrelas -->
-            <div class="flex gap-1 mb-4 mt-2" style="padding-left:0.25rem;">
-              <span v-for="n in dep.estrelas" :key="n" style="color:#C4943E; font-size:0.9rem;">★</span>
-            </div>
-
-            <p class="leading-relaxed text-sm mb-6" style="color:#6B5E57; font-style:italic; padding-top:1rem;">
-              "{{ dep.texto }}"
+          <div style="position: relative;">
+            <p class="leading-relaxed reveal delay-100" style="color:#6B5E57; font-size:1.05rem;">
+              Sou fisioterapeuta e, desde que me formei, descobri que meu coração pertence ao cuidado com os idosos. 💛
+            </p>
+            <p class="leading-relaxed reveal delay-200 mt-4" style="color:#6B5E57; font-size:1.05rem;">
+              Trabalhar com eles é muito mais do que reabilitar um joelho ou fortalecer uma musculatura — é devolver autonomia, autoestima e vontade de viver. Cada pequeno avanço, como voltar a subir um degrau sozinho ou conseguir pentear o próprio cabelo sem dor, é uma conquista gigante.
+            </p>
+            <p class="leading-relaxed reveal delay-300 mt-4" style="color:#6B5E57; font-size:1.05rem;">
+              Eu aprendo todos os dias com as histórias, a sabedoria e a resiliência de cada paciente. A fisioterapia geriátrica me ensinou que envelhecer pode (e deve) ser um processo ativo, digno e cheio de movimento.
+            </p>
+            <p class="leading-relaxed reveal delay-400 mt-4" style="color:#6B5E57; font-size:1.05rem;">
+              É uma honra poder contribuir para que meus pacientes tenham mais qualidade de vida, mais independência e mais confiança em si mesmos. <strong style="color:#4A7050;">Isso, para mim, é propósito.</strong>
             </p>
 
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-white flex-shrink-0"
-                   :style="`background:${dep.cor === '#EEF5EF' ? '#6B9972' : dep.cor === '#FDF8EE' ? '#C4943E' : '#9E8E87'};`">
-                {{ dep.iniciais }}
-              </div>
+            <!-- Assinatura -->
+            <div class="reveal delay-500 flex items-center gap-3 mt-8 pt-6" style="border-top: 1px solid rgba(107,153,114,0.2);">
+              <div style="
+                width: 44px; height: 44px;
+                border-radius: 9999px;
+                background: linear-gradient(135deg, #9EC4A4, #6B9972);
+                display: flex; align-items: center; justify-content: center;
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 1.1rem;
+                color: white;
+                font-weight: 600;
+                flex-shrink: 0;
+              ">V</div>
               <div>
-                <p class="font-bold text-sm" style="color:#2D2825; margin:0;">{{ dep.nome }}</p>
-                <p class="text-xs" style="color:#9E8E87; margin:0;">{{ dep.relacao }}</p>
+                <p style="margin:0; font-weight:700; color:#2D2825; font-size:0.95rem;">Dra. Viviana Tavares Campos</p>
+                <p style="margin:0; color:#9E8E87; font-size:0.8rem;">Fisioterapeuta · Especialista em Geriatria</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!--  DEPOIMENTOS (comentado temporariamente)                   -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!--
+    <section id="depoimentos" class="py-24" style="background:#FAF8F4;">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-xl mx-auto mb-14">
+          <p class="font-semibold text-sm uppercase tracking-widest reveal" style="color:#C4943E;">
+            ✦ Depoimentos
+          </p>
+          <h2 class="font-display reveal delay-100 mt-3" style="font-size:clamp(1.9rem,3.5vw,2.6rem); font-weight:600; line-height:1.2;">
+            O que as famílias dizem
+          </h2>
+          <p class="reveal delay-200 mt-4" style="color:#6B5E57; font-size:0.9rem;">
+            Depoimentos em breve. Seja um dos primeiros a compartilhar sua experiência! 😊
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          ...cards de depoimentos...
+        </div>
+      </div>
+    </section>
+    -->
 
     <!-- ═══════════════════════════════════════════════════════════ -->
     <!--  CTA FINAL                                                  -->
@@ -614,18 +637,18 @@ onMounted(() => {
       </svg>
 
       <div class="max-w-4xl mx-auto px-6 text-center relative">
-        <div class="reveal" style="opacity:0;">
+        <div class="reveal">
           <span style="font-size:3rem; display:block; margin-bottom:1rem;">💚</span>
         </div>
-        <h2 class="font-display reveal delay-100 text-white" style="font-size:clamp(2rem,4vw,3.2rem); font-weight:600; line-height:1.15; opacity:0;">
+        <h2 class="font-display reveal delay-100 text-white" style="font-size:clamp(2rem,4vw,3.2rem); font-weight:600; line-height:1.15;">
           Pronto para começar<br>o cuidado com carinho?
         </h2>
-        <p class="reveal delay-200 mt-5 leading-relaxed" style="color:rgba(255,255,255,0.85); font-size:1.1rem; max-width:520px; margin-left:auto; margin-right:auto; opacity:0;">
+        <p class="reveal delay-200 mt-5 leading-relaxed" style="color:rgba(255,255,255,0.85); font-size:1.1rem; max-width:520px; margin-left:auto; margin-right:auto;">
           Entre em contato pelo WhatsApp e vamos conversar sobre como posso ajudar seu familiar
           com o cuidado que ele merece, dentro do conforto do lar.
         </p>
 
-        <div class="reveal delay-300 flex flex-col sm:flex-row gap-4 justify-center mt-10" style="opacity:0;">
+        <div class="reveal delay-300 flex flex-col sm:flex-row gap-4 justify-center mt-10">
           <a :href="waLink()" target="_blank" rel="noopener"
              class="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-lg transition-all"
              style="background:white; color:#4A7050; text-decoration:none; box-shadow:0 8px 30px rgba(0,0,0,0.2);"
@@ -638,10 +661,10 @@ onMounted(() => {
         </div>
 
         <!-- Informações adicionais -->
-        <div class="reveal delay-400 flex flex-wrap justify-center gap-6 mt-10 text-sm" style="color:rgba(255,255,255,0.75); opacity:0;">
+        <div class="reveal delay-400 flex flex-wrap justify-center gap-6 mt-10 text-sm" style="color:rgba(255,255,255,0.75);">
           <span class="flex items-center gap-2">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-            São Paulo e região
+            Saúde, São Judas e Praça da Árvore
           </span>
           <span class="flex items-center gap-2">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>

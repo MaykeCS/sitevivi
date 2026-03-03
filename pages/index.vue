@@ -13,7 +13,7 @@ const photoLoaded  = ref(false)
 const photoError   = ref(false)
 // Usar binding dinâmico impede o Vite de tentar resolver a imagem
 // como asset estático durante o build (a foto é adicionada pelo usuário)
-const photoSrc     = '/foto-viviana.png'
+const photoSrc     = '/foto-viviana-2.png'
 
 const whatsappLink = 'https://wa.me/5511960661934'
 const whatsappMsg  = encodeURIComponent(
@@ -143,7 +143,7 @@ onMounted(() => {
     <!-- ═══════════════════════════════════════════════════════════ -->
     <!--  HERO                                                       -->
     <!-- ═══════════════════════════════════════════════════════════ -->
-    <section id="inicio" class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden grain-overlay">
+    <section id="inicio" class="relative min-h-screen flex items-center pt-20 pb-12 md:pt-24 md:pb-16 overflow-hidden grain-overlay">
 
       <!-- Background gradiente suave -->
       <div class="absolute inset-0 pointer-events-none" style="
@@ -153,8 +153,8 @@ onMounted(() => {
           radial-gradient(ellipse 40% 40% at 50% 50%, rgba(196,148,62,0.05) 0%, transparent 70%);
       " />
 
-      <!-- Folhas decorativas (flutuantes) -->
-      <svg class="leaf-decor animate-float" style="top:8%; left:3%; width:80px;"
+      <!-- Folhas decorativas (flutuantes) — ocultas no mobile -->
+      <svg class="leaf-decor animate-float hidden md:block" style="top:8%; left:3%; width:80px;"
            viewBox="0 0 80 140" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M40 5C40 5 15 35 15 70C15 96 26 115 40 135C54 115 65 96 65 70C65 35 40 5 40 5Z" fill="#6B9972"/>
         <line x1="40" y1="8" x2="40" y2="132" stroke="#4A7050" stroke-width="1.5"/>
@@ -163,7 +163,7 @@ onMounted(() => {
         <line x1="40" y1="85" x2="24" y2="96" stroke="#4A7050" stroke-width="1"/>
       </svg>
 
-      <svg class="leaf-decor animate-float-slow" style="top:15%; right:5%; width:60px; transform:rotate(30deg);"
+      <svg class="leaf-decor animate-float-slow hidden md:block" style="top:15%; right:5%; width:60px; transform:rotate(30deg);"
            viewBox="0 0 60 110" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M30 4C30 4 8 28 8 55C8 74 17 90 30 106C43 90 52 74 52 55C52 28 30 4 30 4Z" fill="#9EC4A4"/>
         <line x1="30" y1="6" x2="30" y2="104" stroke="#6B9972" stroke-width="1.2"/>
@@ -171,13 +171,13 @@ onMounted(() => {
         <line x1="30" y1="55" x2="42" y2="65" stroke="#6B9972" stroke-width="0.8"/>
       </svg>
 
-      <svg class="leaf-decor animate-float-slower" style="bottom:20%; left:8%; width:50px; transform:rotate(-20deg);"
+      <svg class="leaf-decor animate-float-slower hidden md:block" style="bottom:20%; left:8%; width:50px; transform:rotate(-20deg);"
            viewBox="0 0 50 90" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M25 4C25 4 5 24 5 46C5 62 13 75 25 86C37 75 45 62 45 46C45 24 25 4 25 4Z" fill="#C9A84C"/>
         <line x1="25" y1="5" x2="25" y2="84" stroke="#A67B2A" stroke-width="1"/>
       </svg>
 
-      <svg class="leaf-decor animate-float" style="bottom:10%; right:10%; width:70px; transform:rotate(15deg);"
+      <svg class="leaf-decor animate-float hidden md:block" style="bottom:10%; right:10%; width:70px; transform:rotate(15deg);"
            viewBox="0 0 70 130" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M35 4C35 4 10 32 10 64C10 88 20 106 35 124C50 106 60 88 60 64C60 32 35 4 35 4Z" fill="#6B9972"/>
         <line x1="35" y1="6" x2="35" y2="122" stroke="#4A7050" stroke-width="1.3"/>
@@ -207,7 +207,7 @@ onMounted(() => {
             </h1>
 
             <p class="reveal delay-200 mt-5 leading-relaxed" style="font-size:1.15rem; color:#6B5E57; max-width:440px;">
-              Cuidado especializado e carinhoso para seus familiares idosos,
+              Fisioterapia e massagem terapêutica para seus familiares idosos,
               <strong style="color:#4A7050; font-weight:700;">no conforto e segurança do lar.</strong>
             </p>
 
@@ -289,7 +289,7 @@ onMounted(() => {
               </div>
 
               <!-- Badge flutuante: Fisioterapeuta -->
-              <div class="absolute -bottom-3 -left-4 flex items-center gap-2 px-4 py-2.5 rounded-2xl shadow-lg"
+              <div class="photo-badge-bottom absolute -bottom-3 -left-4 flex items-center gap-2 px-4 py-2.5 rounded-2xl shadow-lg"
                    style="background:white; border:1px solid rgba(107,153,114,0.2); z-index:10;">
                 <span style="font-size:1.3rem;">💚</span>
                 <div>
@@ -299,7 +299,7 @@ onMounted(() => {
               </div>
 
               <!-- Badge flutuante: Domiciliar -->
-              <div class="absolute top-4 -right-4 flex items-center gap-2 px-4 py-2.5 rounded-2xl shadow-lg"
+              <div class="photo-badge-top absolute top-4 -right-4 flex items-center gap-2 px-4 py-2.5 rounded-2xl shadow-lg"
                    style="background:#6B9972; z-index:10;">
                 <span style="font-size:1.1rem;">🏠</span>
                 <p class="font-bold text-xs text-white" style="margin:0; line-height:1.3;">Atendimento<br>Domiciliar</p>
@@ -314,30 +314,48 @@ onMounted(() => {
     <!-- ═══════════════════════════════════════════════════════════ -->
     <!--  SOBRE MIM                                                  -->
     <!-- ═══════════════════════════════════════════════════════════ -->
-    <section id="sobre" class="py-24" style="background:#EEF5EF;">
+    <section id="sobre" class="py-14 md:py-24" style="background:#EEF5EF;">
       <div class="max-w-5xl mx-auto px-6">
         <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
 
-          <!-- Ilustração / ícone -->
+          <!-- Ilustração idoso + fisio -->
           <div class="lg:w-2/5 flex justify-center reveal-left">
             <div class="relative">
-              <!-- Blob decorativo -->
               <div style="
-                width: 300px; height: 300px;
+                width: 280px; height: 280px;
                 background: linear-gradient(135deg, #9EC4A4 0%, #6B9972 100%);
                 border-radius: 60% 40% 50% 50% / 50% 55% 45% 55%;
                 display: flex; align-items: center; justify-content: center;
                 box-shadow: 0 20px 60px rgba(107,153,114,0.25);
               ">
-                <svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <!-- Coração com cruz -->
-                  <path d="M70 115C70 115 20 82 20 50C20 33 33 20 50 20C60 20 69 26 70 28C71 26 80 20 90 20C107 20 120 33 120 50C120 82 70 115 70 115Z" fill="white" opacity="0.9"/>
-                  <!-- Cruz médica -->
-                  <rect x="62" y="46" width="16" height="5" rx="2.5" fill="#6B9972"/>
-                  <rect x="67" y="41" width="5" height="16" rx="2.5" fill="#6B9972"/>
-                  <!-- Folhinha decorativa -->
-                  <path d="M105 105C105 105 95 90 105 80C115 90 105 105 105 105Z" fill="white" opacity="0.4"/>
-                  <line x1="105" y1="105" x2="105" y2="80" stroke="white" stroke-width="1" opacity="0.4"/>
+                <!-- Ilustração: idosa sentada com fisioterapeuta ao lado -->
+                <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Idosa: cabeça -->
+                  <circle cx="70" cy="38" r="18" fill="white" opacity="0.9"/>
+                  <!-- Cabelo branco idosa -->
+                  <path d="M54 34C54 26 62 20 70 20C78 20 86 26 86 34" stroke="white" stroke-width="4" fill="none" opacity="0.5"/>
+                  <!-- Corpo idosa (sentada) -->
+                  <rect x="58" y="56" width="24" height="32" rx="8" fill="white" opacity="0.85"/>
+                  <!-- Pernas idosa -->
+                  <rect x="58" y="84" width="10" height="28" rx="5" fill="white" opacity="0.7"/>
+                  <rect x="72" y="84" width="10" height="28" rx="5" fill="white" opacity="0.7"/>
+                  <!-- Bengala -->
+                  <line x1="86" y1="112" x2="94" y2="70" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+                  <line x1="90" y1="70" x2="98" y2="70" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+                  <!-- Fisioterapeuta: cabeça -->
+                  <circle cx="140" cy="42" r="16" fill="white" opacity="0.9"/>
+                  <!-- Corpo fisio (jaleco) -->
+                  <rect x="128" y="58" width="24" height="36" rx="8" fill="white" opacity="0.85"/>
+                  <!-- Cruz no jaleco -->
+                  <rect x="137" y="68" width="6" height="2.5" rx="1.2" fill="#6B9972"/>
+                  <rect x="139" y="66" width="2.5" height="6" rx="1.2" fill="#6B9972"/>
+                  <!-- Pernas fisio -->
+                  <rect x="128" y="90" width="10" height="26" rx="5" fill="white" opacity="0.7"/>
+                  <rect x="142" y="90" width="10" height="26" rx="5" fill="white" opacity="0.7"/>
+                  <!-- Mão fisio tocando ombro da idosa -->
+                  <path d="M128 72 Q108 68 92 70" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+                  <!-- Coração entre eles -->
+                  <path d="M105 48C105 48 101 44 98 47C95 50 98 54 105 58C112 54 115 50 112 47C109 44 105 48 105 48Z" fill="white" opacity="0.6"/>
                 </svg>
               </div>
 
@@ -370,7 +388,7 @@ onMounted(() => {
             </div>
 
             <p class="reveal delay-300 leading-relaxed mt-5" style="color:#6B5E57;">
-              Recém-formada em Fisioterapia, escolhi o atendimento domiciliar porque acredito que
+              Escolhi o atendimento domiciliar porque acredito que
               o ambiente familiar faz parte do processo de cura. Aqui, você não precisa enfrentar
               o deslocamento — <strong style="color:#4A7050;">eu chego até você com dedicação e carinho.</strong>
             </p>
@@ -401,7 +419,7 @@ onMounted(() => {
     <!-- ═══════════════════════════════════════════════════════════ -->
     <!--  SERVIÇOS                                                   -->
     <!-- ═══════════════════════════════════════════════════════════ -->
-    <section id="servicos" class="py-24" style="background:#FAF8F4;">
+    <section id="servicos" class="py-14 md:py-24" style="background:#FAF8F4;">
       <div class="max-w-6xl mx-auto px-6">
         <div class="text-center max-w-2xl mx-auto mb-14">
           <p class="font-semibold text-sm uppercase tracking-widest reveal" style="color:#C4943E;">
@@ -415,7 +433,7 @@ onMounted(() => {
           </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div v-for="(servico, i) in [
             {
               emoji: '🦵',
@@ -434,6 +452,12 @@ onMounted(() => {
               titulo: 'Fisioterapia Respiratória',
               texto: 'Técnicas para melhorar a função pulmonar, a respiração e o bem-estar geral em casa.',
               cor: '#F0EDF8',
+            },
+            {
+              emoji: '🤲',
+              titulo: 'Massagem Terapêutica',
+              texto: 'Massagens relaxantes e terapêuticas para alívio de tensões, dores musculares e melhora do bem-estar.',
+              cor: '#FDF0E8',
             },
             {
               emoji: '👨‍👩‍👧',
@@ -474,7 +498,7 @@ onMounted(() => {
     <!-- ═══════════════════════════════════════════════════════════ -->
     <!--  POR QUE DOMICILIAR                                         -->
     <!-- ═══════════════════════════════════════════════════════════ -->
-    <section id="domiciliar" class="py-24 relative overflow-hidden" style="background:#2D4A32;">
+    <section id="domiciliar" class="py-14 md:py-24 relative overflow-hidden" style="background:#2D4A32;">
       <!-- Padrão de folhas no fundo -->
       <div class="absolute inset-0 pointer-events-none" style="opacity:0.06;">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -493,6 +517,39 @@ onMounted(() => {
 
           <!-- Texto -->
           <div class="lg:w-1/2">
+            <!-- Ilustração idoso em casa -->
+            <div class="hidden lg:flex justify-start mb-8">
+              <svg width="180" height="130" viewBox="0 0 180 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Casa simples -->
+                <path d="M30 70 L70 30 L110 70" stroke="rgba(255,255,255,0.4)" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+                <rect x="40" y="70" width="60" height="50" rx="3" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                <!-- Porta -->
+                <rect x="60" y="90" width="20" height="30" rx="3" fill="rgba(255,255,255,0.2)"/>
+                <!-- Janela -->
+                <rect x="44" y="76" width="14" height="12" rx="2" fill="rgba(255,255,255,0.2)"/>
+                <!-- Idoso dentro: cabeça -->
+                <circle cx="70" cy="84" r="7" fill="rgba(255,255,255,0.7)"/>
+                <!-- Cabelo branco -->
+                <path d="M64 82C64 78 67 75 70 75C73 75 76 78 76 82" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none"/>
+                <!-- Corpo idoso -->
+                <rect x="64" y="91" width="12" height="16" rx="5" fill="rgba(255,255,255,0.6)"/>
+                <!-- Bengala (dentro de casa) -->
+                <line x1="77" y1="107" x2="80" y2="86" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/>
+                <!-- Coração flutuante -->
+                <path d="M140 25C140 25 137 21 134 24C131 27 134 31 140 35C146 31 149 27 146 24C143 21 140 25 140 25Z" fill="rgba(196,148,62,0.7)"/>
+                <!-- Seta indo até a casa -->
+                <path d="M145 60 Q130 55 115 70" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-dasharray="4 3" fill="none" marker-end="url(#arr)"/>
+                <!-- Fisioterapeuta caminhando -->
+                <circle cx="152" cy="50" r="10" fill="rgba(255,255,255,0.6)"/>
+                <rect x="146" y="60" width="12" height="18" rx="5" fill="rgba(255,255,255,0.55)"/>
+                <!-- Cruz no jaleco -->
+                <rect x="151" y="66" width="4" height="1.5" rx="0.7" fill="#6B9972"/>
+                <rect x="152.5" y="64.5" width="1.5" height="4" rx="0.7" fill="#6B9972"/>
+                <rect x="146" y="76" width="5" height="16" rx="3" fill="rgba(255,255,255,0.45)"/>
+                <rect x="153" y="76" width="5" height="16" rx="3" fill="rgba(255,255,255,0.45)"/>
+              </svg>
+            </div>
+
             <p class="font-semibold text-sm uppercase tracking-widest reveal" style="color:#C4943E;">
               ✦ Por que domiciliar?
             </p>
@@ -534,18 +591,18 @@ onMounted(() => {
     <!-- ═══════════════════════════════════════════════════════════ -->
     <!--  MANIFESTO / VOZ DA DRA.                                   -->
     <!-- ═══════════════════════════════════════════════════════════ -->
-    <section class="py-24" style="background:#FAF8F4;">
-      <div class="max-w-3xl mx-auto px-6">
-        <div class="reveal" style="
+    <section class="py-14 md:py-24" style="background:#FAF8F4;">
+      <div class="max-w-3xl mx-auto px-4 md:px-6">
+        <div class="manifesto-card reveal" style="
           background: white;
-          border-radius: 2rem;
-          padding: 3rem 3.5rem;
+          border-radius: 1.5rem;
+          padding: 2rem 1.75rem;
           box-shadow: 0 8px 48px rgba(107,153,114,0.12);
           border: 1px solid rgba(107,153,114,0.15);
           position: relative;
         ">
           <!-- Aspas decorativas -->
-          <span style="
+          <span class="manifesto-quote" style="
             font-family: 'Cormorant Garamond', serif;
             font-size: 8rem;
             line-height: 1;
@@ -622,7 +679,7 @@ onMounted(() => {
     <!-- ═══════════════════════════════════════════════════════════ -->
     <!--  CTA FINAL                                                  -->
     <!-- ═══════════════════════════════════════════════════════════ -->
-    <section id="contato" class="relative py-28 overflow-hidden grain-overlay" style="background:#6B9972;">
+    <section id="contato" class="relative py-16 md:py-28 overflow-hidden grain-overlay" style="background:#6B9972;">
 
       <!-- Folhas decorativas -->
       <svg class="leaf-decor animate-float" style="top:10%; left:5%; width:90px; opacity:0.15;"

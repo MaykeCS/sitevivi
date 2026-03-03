@@ -312,6 +312,48 @@ body {
   flex-shrink: 0;
 }
 
+/* ─── Responsividade Mobile ─────────────────────────── */
+@media (max-width: 640px) {
+  .navbar {
+    padding: 0.875rem 1rem;
+  }
+
+  .hero-badge {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.85rem;
+    letter-spacing: 0.03em;
+  }
+
+  .photo-frame {
+    width: 240px;
+    height: 310px;
+  }
+
+  .photo-ring {
+    inset: -8px;
+  }
+
+  .photo-badge-bottom {
+    display: none;
+  }
+
+  .photo-badge-top {
+    top: 0.5rem;
+    right: -0.5rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .manifesto-card {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .manifesto-quote {
+    font-size: 5rem;
+    top: 0.25rem;
+    left: 1rem;
+  }
+}
+
 /* ─── Grain texture overlay ─────────────────────────── */
 .grain-overlay::after {
   content: '';

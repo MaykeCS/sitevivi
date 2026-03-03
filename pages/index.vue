@@ -330,8 +330,8 @@ onMounted(() => {
                 overflow: hidden;
                 box-shadow: 0 20px 60px rgba(107,153,114,0.25);
               ">
-                <img :src="idosoSrc1" alt="Idosa recebendo fisioterapia"
-                     style="width:100%; height:100%; object-fit:cover;">
+                <!-- <img :src="idosoSrc1" alt="Idosa recebendo fisioterapia"
+                     style="width:100%; height:100%; object-fit:cover;"> -->
               </div>
 
               <!-- Balão de fala / citação -->
@@ -488,10 +488,10 @@ onMounted(() => {
           <!-- Texto -->
           <div class="lg:w-1/2">
             <!-- Ilustração idoso em casa -->
-            <div class="hidden lg:flex justify-start mb-8">
+            <!-- <div class="hidden lg:flex justify-start mb-8">
               <img :src="idosoSrc2" alt="Atendimento domiciliar a idoso"
                    style="width:180px; height:130px; object-fit:cover; border-radius:1rem; opacity:0.85;">
-            </div>
+            </div> -->
 
             <p class="font-semibold text-sm uppercase tracking-widest reveal" style="color:#C4943E;">
               ✦ Por que domiciliar?

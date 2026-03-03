@@ -1,9 +1,9 @@
 <script setup lang="ts">
 // ─── SEO ─────────────────────────────────────────────────────────
 useSeoMeta({
-  title: 'Dra. Viviana Tavares Campos | Fisioterapia Domiciliar',
+  title: 'Dra. Viviana — Fisioterapeuta',
   description:
-    'Fisioterapia domiciliar com carinho especial para idosos. Dra. Viviana Tavares Campos atende no conforto do seu lar em São Paulo.',
+    'Fisioterapia domiciliar com carinho especial para idosos e Massagem Terapêutica',
 })
 
 // ─── Estado do navbar ──────────────────────────────────────────────

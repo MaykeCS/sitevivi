@@ -2,8 +2,10 @@
 // ─── SEO ─────────────────────────────────────────────────────────
 useSeoMeta({
   title: 'Dra. Viviana — Fisioterapeuta',
-  description:
-    'Fisioterapia domiciliar com carinho especial para idosos e Massagem Terapêutica',
+  description: 'Fisioterapia domiciliar com carinho especial para idosos e Massagem Terapêutica',
+  ogTitle: 'Dra. Viviana — Fisioterapeuta',
+  ogDescription: 'Fisioterapia domiciliar com carinho especial para idosos e Massagem Terapêutica. Zona Sul de São Paulo.',
+  ogType: 'website',
 })
 
 // ─── Estado do navbar ──────────────────────────────────────────────

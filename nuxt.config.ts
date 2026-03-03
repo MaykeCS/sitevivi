@@ -20,12 +20,6 @@ export default defineNuxtConfig({
             'Fisioterapia domiciliar com carinho e dedicação para idosos. Dra. Viviana Tavares Campos atende no conforto do seu lar em São Paulo.',
         },
         { name: 'theme-color', content: '#6B9972' },
-        { property: 'og:title', content: 'Dra. Viviana Tavares Campos | Fisioterapia Domiciliar' },
-        {
-          property: 'og:description',
-          content: 'Cuidado especializado e carinhoso para seus familiares idosos, no conforto do lar.',
-        },
-        { property: 'og:type', content: 'website' },
       ],
       script: [
         {
@@ -52,7 +46,7 @@ gtag('config', 'G-6N9P11FETY');`,
 
   nitro: {
     prerender: {
-      routes: ['/'],
+      routes: ['/', '/domiciliar', '/massagem'],
     },
   },
 })

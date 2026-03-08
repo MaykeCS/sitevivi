@@ -15,7 +15,7 @@ const photoLoaded  = ref(false)
 const photoError   = ref(false)
 // Usar binding dinâmico impede o Vite de tentar resolver as imagens
 // como assets estáticos durante o build (arquivos adicionados pelo usuário)
-const photoSrc      = '/foto-viviana-2.png'
+const photoSrc      = '/foto-viviana.png'
 const idosoSrc1     = '/imagem-idoso-1.png'
 const idosoSrc2     = '/imagem-idoso-2.png'
 

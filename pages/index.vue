@@ -645,25 +645,71 @@ onMounted(() => {
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════ -->
-    <!--  DEPOIMENTOS (comentado temporariamente)                   -->
+    <!--  DEPOIMENTOS (desabilitado — descomentar quando tiver depoimentos reais) -->
     <!-- ═══════════════════════════════════════════════════════════ -->
     <!--
-    <section id="depoimentos" class="py-24" style="background:#FAF8F4;">
+    <section id="depoimentos" class="py-14 md:py-24" style="background:#FAF8F4;">
       <div class="max-w-6xl mx-auto px-6">
         <div class="text-center max-w-xl mx-auto mb-14">
           <p class="font-semibold text-sm uppercase tracking-widest reveal" style="color:#C4943E;">
-            ✦ Depoimentos
+            ✦ Eu recomendo
           </p>
           <h2 class="font-display reveal delay-100 mt-3" style="font-size:clamp(1.9rem,3.5vw,2.6rem); font-weight:600; line-height:1.2;">
             O que as famílias dizem
           </h2>
-          <p class="reveal delay-200 mt-4" style="color:#6B5E57; font-size:0.9rem;">
-            Depoimentos em breve. Seja um dos primeiros a compartilhar sua experiência! 😊
+          <p class="reveal delay-200 mt-4 leading-relaxed" style="color:#6B5E57; font-size:1rem;">
+            O carinho e a dedicação que fazem a diferença na vida de cada paciente.
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          ...cards de depoimentos...
+          <div v-for="(dep, i) in [
+            {
+              nome: 'Nome do Paciente',
+              relacao: 'Relação com paciente',
+              texto: 'Depoimento aqui...',
+              estrelas: 5,
+            },
+          ]" :key="dep.nome"
+            class="testimonial-card reveal"
+            :class="`delay-${(i + 1) * 100}`"
+          >
+            <div style="position:relative; z-index:1;">
+              <div class="flex gap-1 mb-4">
+                <svg v-for="s in dep.estrelas" :key="s" width="18" height="18" viewBox="0 0 24 24" fill="#C4943E">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
+              <p class="leading-relaxed mb-5" style="color:#6B5E57; font-size:0.95rem;">
+                "{{ dep.texto }}"
+              </p>
+              <div class="flex items-center gap-3" style="border-top:1px solid rgba(107,153,114,0.12); padding-top:1rem;">
+                <div style="
+                  width:40px; height:40px;
+                  border-radius:9999px;
+                  background:linear-gradient(135deg, #9EC4A4, #6B9972);
+                  display:flex; align-items:center; justify-content:center;
+                  color:white; font-weight:700; font-size:0.9rem;
+                  flex-shrink:0;
+                ">{{ dep.nome.charAt(0) }}</div>
+                <div>
+                  <p style="margin:0; font-weight:700; color:#2D2825; font-size:0.9rem;">{{ dep.nome }}</p>
+                  <p style="margin:0; color:#9E8E87; font-size:0.8rem;">{{ dep.relacao }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12 reveal">
+          <p class="mb-5 text-base" style="color:#6B5E57;">
+            Você ou sua família já foram atendidos pela Dra. Viviana?
+          </p>
+          <a :href="waLink()" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-full transition-all"
+             style="background:white; color:#4A7050; border:2px solid rgba(107,153,114,0.3); text-decoration:none;">
+            Compartilhe sua experiência
+          </a>
         </div>
       </div>
     </section>

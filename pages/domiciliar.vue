@@ -259,7 +259,7 @@ const waLink = `${whatsappLink}?text=${whatsappMsg}`
     <!-- ── FOOTER MÍNIMO ── -->
     <footer style="padding:1.5rem; text-align:center; background:#1C2B1F;">
       <p style="font-size:0.8rem; color:rgba(255,255,255,0.35); margin:0;">
-        © {{ new Date().getFullYear() }} Dra. Viviana Tavares Campos · Fisioterapia Domiciliar · São Paulo
+        © {{ new Date().getFullYear() }} Dra. Viviana Tavares Campos · CREFITO 450602-F · Fisioterapia Domiciliar · São Paulo
       </p>
     </footer>
 

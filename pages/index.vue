@@ -636,7 +636,7 @@ onMounted(() => {
               ">V</div>
               <div>
                 <p style="margin:0; font-weight:700; color:#2D2825; font-size:0.95rem;">Dra. Viviana Tavares Campos</p>
-                <!-- <p style="margin:0; color:#9E8E87; font-size:0.8rem;">Fisioterapeuta · CREFITO</p> -->
+                <p style="margin:0; color:#9E8E87; font-size:0.8rem;">Fisioterapeuta · CREFITO 450602-F</p>
               </div>
             </div>
           </div>
@@ -740,7 +740,7 @@ onMounted(() => {
           </svg>
           <div>
             <p class="font-display font-semibold text-white" style="font-size:0.95rem; margin:0;">Dra. Viviana Tavares Campos</p>
-            <!-- <p style="font-size:0.8rem; margin:0; color:rgba(255,255,255,0.45);">Fisioterapeuta · CREFITO</p> -->
+            <p style="font-size:0.8rem; margin:0; color:rgba(255,255,255,0.45);">Fisioterapeuta · CREFITO 450602-F</p>
           </div>
         </div>
 

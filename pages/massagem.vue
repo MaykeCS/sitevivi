@@ -201,7 +201,7 @@ const waLink = `${whatsappLink}?text=${whatsappMsg}`
               ">V</div>
               <div>
                 <p style="margin:0; font-weight:700; color:#2D2825; font-size:0.95rem;">Dra. Viviana Tavares Campos</p>
-                <p style="margin:0; color:#9E8E87; font-size:0.8rem;">Fisioterapeuta</p>
+                <p style="margin:0; color:#9E8E87; font-size:0.8rem;">Fisioterapeuta · CREFITO 450602-F</p>
               </div>
             </div>
           </div>
@@ -242,7 +242,7 @@ const waLink = `${whatsappLink}?text=${whatsappMsg}`
     <!-- ── FOOTER MÍNIMO ── -->
     <footer style="padding:1.5rem; text-align:center; background:#1C2B1F;">
       <p style="font-size:0.8rem; color:rgba(255,255,255,0.35); margin:0;">
-        © {{ new Date().getFullYear() }} Dra. Viviana Tavares Campos · Massagem Terapêutica · São Paulo
+        © {{ new Date().getFullYear() }} Dra. Viviana Tavares Campos · CREFITO 450602-F · Massagem Terapêutica · São Paulo
       </p>
     </footer>
 
@@ -258,3 +258,4 @@ const waLink = `${whatsappLink}?text=${whatsappMsg}`
 
   </div>
 </template>
+

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Fisioterapia Domiciliar em São Paulo | Dra. Viviana Tavares Campos',
-  description: 'Fisioterapia domiciliar para idosos nos bairros Saúde, São Judas e Praça da Árvore. Atendimento no conforto do seu lar. Agende pelo WhatsApp.',
+  description: 'Fisioterapia domiciliar para idosos em Saúde, Vila Mariana, Indianópolis, Av Paulista, Santa Cruz, Vergueiro e região. Agende pelo WhatsApp.',
   ogTitle: 'Dra. Viviana — Fisioterapia Domiciliar · Zona Sul SP',
-  ogDescription: 'Fisioterapia domiciliar para idosos. Saúde, São Judas e Praça da Árvore. Atendimento no conforto do seu lar. Agende pelo WhatsApp.',
+  ogDescription: 'Fisioterapia domiciliar para idosos. Saúde, Vila Mariana, Indianópolis, Av Paulista e região. Atendimento no conforto do seu lar.',
   ogType: 'website',
 })
 
@@ -69,6 +69,14 @@ const waLink = `${whatsappLink}?text=${whatsappMsg}`
 
       <div style="max-width:680px; margin:0 auto; text-align:center; position:relative;">
 
+        <!-- Foto da Dra. Viviana -->
+        <div style="margin:0 auto 1.5rem; width:160px; height:160px; border-radius:9999px; overflow:hidden; border:4px solid rgba(107,153,114,0.3); box-shadow:0 8px 30px rgba(107,153,114,0.2);">
+          <img src="/foto-viviana.png" alt="Dra. Viviana Tavares Campos — Fisioterapeuta" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <p style="font-size:0.78rem; color:#9E8E87; margin:0 0 1.5rem; letter-spacing:0.03em;">
+          CREFITO 450602-F
+        </p>
+
         <!-- Badge -->
         <div style="
           display:inline-flex; align-items:center; gap:0.5rem;
@@ -78,7 +86,7 @@ const waLink = `${whatsappLink}?text=${whatsappMsg}`
           text-transform:uppercase; letter-spacing:0.05em; margin-bottom:1.5rem;
         ">
           <span style="width:6px;height:6px;border-radius:9999px;background:#4A7050;display:inline-block;"></span>
-          Saúde · São Judas · Praça da Árvore
+          Saúde · Vila Mariana · Indianópolis · Av Paulista
         </div>
 
         <h1 style="
@@ -93,7 +101,7 @@ const waLink = `${whatsappLink}?text=${whatsappMsg}`
 
         <p style="font-size:1.1rem; color:#6B5E57; line-height:1.7; max-width:520px; margin:0 auto 2rem;">
           A Dra. Viviana vai até você. Tratamento especializado para idosos,
-          <strong style="color:#4A7050;">sem sair de casa</strong> — com carinho, atenção e resultado.
+          <strong style="color:#4A7050;">sem sair de casa</strong> — com carinho, atenção e dedicação.
         </p>
 
         <!-- CTA principal -->
@@ -209,7 +217,7 @@ const waLink = `${whatsappLink}?text=${whatsappMsg}`
           Atendo nos bairros e regiões próximas de:
         </p>
         <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.75rem; margin-bottom:2.5rem;">
-          <span v-for="bairro in ['Saúde','São Judas','Praça da Árvore','Jabaquara','Ipiranga','Cursino','Vila Mariana']"
+          <span v-for="bairro in ['Saúde','São Judas','Praça da Árvore','Vila Mariana','Indianópolis','Av Paulista','Santa Cruz','Vergueiro','Jabaquara','Ipiranga','Cursino']"
                 :key="bairro" style="
             background:#EEF5EF; color:#4A7050; font-weight:700; font-size:0.9rem;
             padding:0.5rem 1.1rem; border-radius:9999px;

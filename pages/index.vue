@@ -4,7 +4,7 @@ useSeoMeta({
   title: 'Dra. Viviana — Fisioterapeuta',
   description: 'Fisioterapia domiciliar com carinho especial para idosos e Massagem Terapêutica',
   ogTitle: 'Dra. Viviana — Fisioterapeuta',
-  ogDescription: 'Fisioterapia domiciliar com carinho especial para idosos e Massagem Terapêutica. Zona Sul de São Paulo.',
+  ogDescription: 'Fisioterapia domiciliar com carinho especial para idosos e Massagem Terapêutica. Saúde, Vila Mariana, Indianópolis, Av Paulista e região.',
   ogType: 'website',
 })
 
@@ -201,7 +201,7 @@ onMounted(() => {
                 <circle cx="6" cy="6" r="5" stroke="#4A7050" stroke-width="1.5"/>
                 <circle cx="6" cy="6" r="2" fill="#4A7050"/>
               </svg>
-              Fisioterapia Domiciliar · Saúde, São Judas e Praça da Árvore
+              Fisioterapia Domiciliar · Zona Sul de São Paulo
             </div>
 
             <h1 class="font-display reveal delay-100 mt-5"
@@ -559,7 +559,7 @@ onMounted(() => {
           <!-- Benefícios -->
           <div class="lg:w-1/2 flex flex-col gap-5">
             <div v-for="(b, i) in [
-              { icon:'🏠', titulo:'Conforto e segurança do lar', texto:'O paciente se sente mais tranquilo e confiante no próprio ambiente, o que acelera a recuperação.' },
+              { icon:'🏠', titulo:'Conforto e segurança do lar', texto:'O paciente se sente mais tranquilo e confiante no próprio ambiente, o que contribui para o bem-estar.' },
               { icon:'🚫', titulo:'Sem deslocamentos cansativos', texto:'Especialmente para idosos, evitar o transporte reduz riscos e economiza energia para o que realmente importa.' },
               { icon:'👁️', titulo:'Tratamento 100% personalizado', texto:'Avalio a rotina, o espaço e as necessidades reais de cada pessoa para criar um plano único.' },
               { icon:'👨‍👩‍👧', titulo:'Família integrada ao cuidado', texto:'Os familiares aprendem a ajudar corretamente, tornando o cuidado uma experiência de toda a família.' },
@@ -714,7 +714,7 @@ onMounted(() => {
         <div class="reveal delay-400 flex flex-wrap justify-center gap-6 mt-10 text-sm" style="color:rgba(255,255,255,0.75);">
           <span class="flex items-center gap-2">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-            Saúde, São Judas e Praça da Árvore
+            Saúde, São Judas, Vila Mariana, Indianópolis e região
           </span>
           <span class="flex items-center gap-2">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>

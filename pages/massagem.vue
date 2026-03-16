@@ -7,7 +7,8 @@ useSeoMeta({
   ogType: 'website',
 })
 
-const whatsappLink = 'https://wa.me/5511960661934'
+const { public: { whatsappNumber } } = useRuntimeConfig()
+const whatsappLink = `https://wa.me/${whatsappNumber}`
 const whatsappMsg  = encodeURIComponent(
   'Olá, Dra. Viviana! Gostaria de saber mais sobre a massagem terapêutica e agendar uma sessão.'
 )

@@ -19,7 +19,8 @@ const photoSrc      = '/foto-viviana.png'
 const idosoSrc1     = '/imagem-idoso-1.png'
 const idosoSrc2     = '/imagem-idoso-2.png'
 
-const whatsappLink = 'https://wa.me/5511960661934'
+const { public: { whatsappNumber } } = useRuntimeConfig()
+const whatsappLink = `https://wa.me/${whatsappNumber}`
 const whatsappMsg  = encodeURIComponent(
   'Olá, Dra. Viviana! Gostaria de agendar uma consulta de fisioterapia domiciliar.'
 )

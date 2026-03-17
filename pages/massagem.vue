@@ -75,12 +75,12 @@ const waLink = `${whatsappLink}?text=${whatsappMsg}`
 
         <div style="
           display:inline-flex; align-items:center; gap:0.5rem;
-          background:rgba(196,148,62,0.1); border:1px solid rgba(196,148,62,0.3);
-          color:#A67B2A; font-size:0.8rem; font-weight:700;
+          background:rgba(107,153,114,0.12); border:1px solid rgba(107,153,114,0.35);
+          color:#4A7050; font-size:0.8rem; font-weight:700;
           padding:0.4rem 1rem; border-radius:9999px;
           text-transform:uppercase; letter-spacing:0.05em; margin-bottom:1.5rem;
         ">
-          ✦ Sessão presencial · São Paulo
+          🩺 Fisioterapeuta · CREFITO 450602-F
         </div>
 
         <h1 style="
@@ -89,14 +89,33 @@ const waLink = `${whatsappLink}?text=${whatsappMsg}`
           font-weight:600; line-height:1.12;
           color:#2D2825; margin:0 0 1.25rem;
         ">
-          Massagem Terapêutica<br>
-          <span style="color:#C4943E;">que transforma</span>
+          Massagem com olhar<br>
+          <span style="color:#C4943E;">clínico e terapêutico</span>
         </h1>
 
-        <p style="font-size:1.1rem; color:#6B5E57; line-height:1.7; max-width:520px; margin:0 auto 2rem;">
-          Alívio real de tensões, dores musculares e estresse com técnicas terapêuticas especializadas.
-          <strong style="color:#4A7050;">Cuide do seu corpo com quem entende.</strong>
+        <p style="font-size:1.1rem; color:#6B5E57; line-height:1.7; max-width:520px; margin:0 auto 1.5rem;">
+          Alívio de tensões, dores musculares e estresse aplicado por uma
+          <strong style="color:#4A7050;">Fisioterapeuta formada</strong> — com conhecimento clínico
+          para cuidar do seu corpo com precisão, segurança e intenção terapêutica real.
         </p>
+
+        <!-- Diferenciais fisioterápicos no hero -->
+        <div style="
+          display:flex; flex-wrap:wrap; justify-content:center; gap:0.6rem;
+          max-width:520px; margin:0 auto 2rem;
+        ">
+          <span v-for="d in [
+            '🦴 Anatomia aplicada',
+            '🔬 Avaliação clínica',
+            '⚕️ Segura para lesões',
+            '🎯 Sessão personalizada',
+          ]" :key="d" style="
+            display:inline-flex; align-items:center;
+            background:rgba(107,153,114,0.1); border:1px solid rgba(107,153,114,0.3);
+            color:#4A7050; font-size:0.78rem; font-weight:700;
+            padding:0.35rem 0.85rem; border-radius:9999px;
+          ">{{ d }}</span>
+        </div>
 
         <a :href="waLink" target="_blank" rel="noopener" style="
           display:inline-flex; align-items:center; gap:0.75rem;
@@ -123,8 +142,11 @@ const waLink = `${whatsappLink}?text=${whatsappMsg}`
           font-family:'Cormorant Garamond',serif;
           font-size:clamp(1.6rem,3vw,2.2rem);
           font-weight:600; text-align:center;
-          color:#2D2825; margin:0 0 2.5rem;
+          color:#2D2825; margin:0 0 0.5rem;
         ">O que ofereço</h2>
+        <p style="text-align:center; font-size:0.95rem; color:#6B5E57; margin:0 0 2.5rem;">
+          Cada técnica é escolhida com base na sua queixa — não por acaso.
+        </p>
 
         <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem;">
           <div v-for="m in [
@@ -173,6 +195,58 @@ const waLink = `${whatsappLink}?text=${whatsappMsg}`
       </div>
     </section>
 
+    <!-- ── DIFERENCIAL FISIOTERÁPICO ── -->
+    <section style="padding:4rem 1.5rem; background:#1C2B1F;">
+      <div style="max-width:840px; margin:0 auto;">
+        <p style="font-size:0.8rem; font-weight:700; color:#9EC4A4; text-transform:uppercase; letter-spacing:0.08em; text-align:center; margin:0 0 0.5rem;">
+          ✦ Por que fisioterapeuta?
+        </p>
+        <h2 style="
+          font-family:'Cormorant Garamond',serif;
+          font-size:clamp(1.6rem,3vw,2.2rem);
+          font-weight:600; text-align:center;
+          color:#FAF8F4; margin:0 0 0.75rem;
+        ">Mais que toque — é ciência aplicada</h2>
+        <p style="text-align:center; color:rgba(250,248,244,0.65); font-size:0.95rem; max-width:560px; margin:0 auto 2.5rem; line-height:1.6;">
+          Qualquer pessoa pode aprender a massagear. Mas só uma fisioterapeuta sabe
+          <em>por que</em> cada músculo dói, <em>como</em> ele funciona e <em>o que</em> ele precisa.
+        </p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.25rem;">
+          <div v-for="d in [
+            {
+              icon:'🦴',
+              titulo:'Anatomia e biomecânica',
+              texto:'Conhecimento profundo da musculatura, articulações e fascias permite identificar a origem real da tensão ou dor — não só o sintoma.'
+            },
+            {
+              icon:'🔬',
+              titulo:'Avaliação clínica antes de tocar',
+              texto:'Antes de cada sessão há uma escuta ativa. Histórico, postura e queixas são considerados para escolher a técnica certa para o seu caso.'
+            },
+            {
+              icon:'⚕️',
+              titulo:'Segurança em casos complexos',
+              texto:'Hérnias, lesões musculares, pós-cirúrgico, gestantes — situações que exigem cuidado especializado para não piorar o que já existe.'
+            },
+            {
+              icon:'🎯',
+              titulo:'Objetivo terapêutico real',
+              texto:'A sessão não é padronizada. Cada escolha de pressão, área e técnica tem uma justificativa clínica — focada em resultados concretos.'
+            },
+          ]" :key="d.titulo" style="
+            background:rgba(255,255,255,0.05); border-radius:1.25rem;
+            padding:1.75rem 1.5rem;
+            border:1px solid rgba(158,196,164,0.2);
+          ">
+            <span style="font-size:2rem; display:block; margin-bottom:0.75rem;">{{ d.icon }}</span>
+            <h3 style="font-weight:700; font-size:1rem; color:#9EC4A4; margin:0 0 0.5rem;">{{ d.titulo }}</h3>
+            <p style="font-size:0.88rem; color:rgba(250,248,244,0.7); line-height:1.6; margin:0;">{{ d.texto }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ── SOBRE A PROFISSIONAL ── -->
     <section style="padding:4rem 1.5rem; background:#EEF5EF;">
       <div style="max-width:620px; margin:0 auto;">
@@ -188,9 +262,13 @@ const waLink = `${whatsappLink}?text=${whatsappMsg}`
             opacity:0.35; line-height:1; pointer-events:none;
           ">"</span>
           <div style="position:relative;">
+            <p style="color:#6B5E57; line-height:1.75; font-size:1rem; margin:0 0 1rem;">
+              Minha formação em Fisioterapia me dá uma visão clínica da massagem que vai muito além do relaxamento.
+              Sei exatamente <strong style="color:#4A7050;">quais estruturas estão envolvidas</strong> no que você sente,
+              qual técnica vai agir de forma mais eficaz e o que evitar para não gerar lesão.
+            </p>
             <p style="color:#6B5E57; line-height:1.75; font-size:1rem; margin:0 0 1.25rem;">
-              Minha formação em Fisioterapia me dá uma visão clínica da massagem que vai além do relaxamento.
-              Cada sessão é pensada para o <strong style="color:#4A7050;">seu corpo, suas necessidades e seus objetivos</strong>.
+              Cada sessão é pensada para o <strong style="color:#4A7050;">seu corpo, suas necessidades e seus objetivos</strong> — com o rigor de quem estudou anos para entender o movimento humano.
             </p>
             <div style="display:flex; align-items:center; gap:0.875rem; padding-top:1.25rem; border-top:1px solid rgba(107,153,114,0.15);">
               <div style="
@@ -202,7 +280,7 @@ const waLink = `${whatsappLink}?text=${whatsappMsg}`
               ">V</div>
               <div>
                 <p style="margin:0; font-weight:700; color:#2D2825; font-size:0.95rem;">Dra. Viviana Tavares Campos</p>
-                <p style="margin:0; color:#9E8E87; font-size:0.8rem;">Fisioterapeuta · CREFITO 450602-F</p>
+                <p style="margin:0; color:#9E8E87; font-size:0.8rem;">Fisioterapeuta · CREFITO 450602-F · São Paulo</p>
               </div>
             </div>
           </div>

@@ -13,6 +13,31 @@ const whatsappMsg  = encodeURIComponent(
   'Olá, Dra. Viviana! Gostaria de saber mais sobre a massagem terapêutica e agendar uma sessão.'
 )
 const waLink = `${whatsappLink}?text=${whatsappMsg}`
+
+const carouselImages = [
+  { src: 'https://images.pexels.com/photos/6187638/pexels-photo-6187638.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Mãos massageando costas — massagem terapêutica' },
+  { src: 'https://images.pexels.com/photos/6560266/pexels-photo-6560266.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Pedras quentes nas costas — massagem relaxante' },
+  { src: 'https://images.pexels.com/photos/7700/pexels-photo-7700.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Pétalas nas costas — spa e bem-estar' },
+  { src: 'https://images.pexels.com/photos/10894305/pexels-photo-10894305.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Óleo nas mãos — massagem com óleos essenciais' },
+]
+
+const currentSlide = ref(0)
+let intervalId: ReturnType<typeof setInterval> | null = null
+
+function startCarousel() {
+  intervalId = setInterval(() => {
+    currentSlide.value = (currentSlide.value + 1) % carouselImages.length
+  }, 4000)
+}
+
+function goToSlide(index: number) {
+  currentSlide.value = index
+  if (intervalId) clearInterval(intervalId)
+  startCarousel()
+}
+
+onMounted(() => startCarousel())
+onUnmounted(() => { if (intervalId) clearInterval(intervalId) })
 </script>
 
 <template>
@@ -63,14 +88,43 @@ const waLink = `${whatsappLink}?text=${whatsappMsg}`
 
       <div style="max-width:680px; margin:0 auto; text-align:center; position:relative;">
 
-        <!-- Ícone decorativo -->
+        <!-- Carrossel de imagens de massagem -->
         <div style="
-          width:72px; height:72px; border-radius:9999px; margin:0 auto 1.5rem;
-          background:linear-gradient(135deg, #EDD89F, #C4943E);
-          display:flex; align-items:center; justify-content:center;
-          box-shadow:0 8px 24px rgba(196,148,62,0.3);
+          width:280px; height:200px; border-radius:1.25rem; margin:0 auto 1.5rem;
+          overflow:hidden; position:relative;
+          box-shadow:0 8px 32px rgba(196,148,62,0.3);
+          border:3px solid rgba(196,148,62,0.25);
         ">
-          <span style="font-size:2rem;">🤲</span>
+          <div v-for="(img, i) in carouselImages" :key="i" :style="{
+            position:'absolute', inset:'0',
+            opacity: currentSlide === i ? 1 : 0,
+            transition: 'opacity 0.8s ease-in-out',
+          }">
+            <img
+              :src="img.src"
+              :alt="img.alt"
+              loading="lazy"
+              style="width:100%; height:100%; object-fit:cover;"
+            />
+          </div>
+          <!-- Indicadores -->
+          <div style="
+            position:absolute; bottom:0.5rem; left:50%; transform:translateX(-50%);
+            display:flex; gap:0.4rem;
+          ">
+            <button
+              v-for="(_, i) in carouselImages" :key="i"
+              @click="goToSlide(i)"
+              :style="{
+                width: currentSlide === i ? '20px' : '8px',
+                height:'8px', borderRadius:'9999px', border:'none', cursor:'pointer',
+                background: currentSlide === i ? '#C4943E' : 'rgba(255,255,255,0.7)',
+                transition: 'all 0.3s ease',
+                boxShadow:'0 1px 4px rgba(0,0,0,0.3)',
+              }"
+              :aria-label="'Imagem ' + (i + 1)"
+            />
+          </div>
         </div>
 
         <div style="

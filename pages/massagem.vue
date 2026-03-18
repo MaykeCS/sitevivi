@@ -23,10 +23,12 @@ const whatsappMsg  = encodeURIComponent(
 const waLink = `${whatsappLink}?text=${whatsappMsg}`
 
 const carouselImages = [
-  { src: 'https://images.pexels.com/photos/6187638/pexels-photo-6187638.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Mãos massageando costas — massagem terapêutica' },
-  { src: 'https://images.pexels.com/photos/6560266/pexels-photo-6560266.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Pedras quentes nas costas — massagem relaxante' },
-  { src: 'https://images.pexels.com/photos/7700/pexels-photo-7700.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Pétalas nas costas — spa e bem-estar' },
+  { src: 'https://images.pexels.com/photos/6560266/pexels-photo-6560266.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Compressas herbais — massagem relaxante' },
+  { src: 'https://images.pexels.com/photos/6187430/pexels-photo-6187430.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Massagem com compressa quente — spa terapêutico' },
   { src: 'https://images.pexels.com/photos/10894305/pexels-photo-10894305.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Óleo nas mãos — massagem com óleos essenciais' },
+  { src: 'https://images.pexels.com/photos/6560280/pexels-photo-6560280.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Tratamento corporal — relaxamento e bem-estar' },
+  { src: 'https://images.pexels.com/photos/19641835/pexels-photo-19641835.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Sessão de massagem terapêutica profissional' },
+  { src: 'https://images.pexels.com/photos/275848/pexels-photo-275848.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Mãos aplicando massagem terapêutica' },
 ]
 
 const currentSlide = ref(0)
@@ -35,7 +37,7 @@ let intervalId: ReturnType<typeof setInterval> | null = null
 function startCarousel() {
   intervalId = setInterval(() => {
     currentSlide.value = (currentSlide.value + 1) % carouselImages.length
-  }, 4000)
+  }, 2500)
 }
 
 function goToSlide(index: number) {

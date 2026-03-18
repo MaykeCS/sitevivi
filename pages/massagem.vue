@@ -1,10 +1,18 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Dra. Viviana — Massagem Terapêutica',
-  description: 'Massagem terapêutica especializada com Dra. Viviana Tavares Campos. Alívio de tensões, dores musculares e bem-estar. Agende sua sessão pelo WhatsApp.',
-  ogTitle: 'Dra. Viviana — Massagem Terapêutica',
+  title: 'Viviana Tavares — Massagem Terapêutica',
+  description: 'Massagem terapêutica especializada com Viviana Tavares Campos. Alívio de tensões, dores musculares e bem-estar. Agende sua sessão pelo WhatsApp.',
+  ogTitle: 'Viviana Tavares — Massagem Terapêutica',
   ogDescription: 'Massagem terapêutica especializada. Alívio de tensões, dores musculares e bem-estar. Agende sua sessão pelo WhatsApp.',
   ogType: 'website',
+  ogImage: '/logo-massagem.png',
+})
+
+useHead({
+  link: [
+    { rel: 'icon', type: 'image/png', href: '/logo-massagem.png' },
+    { rel: 'apple-touch-icon', href: '/logo-massagem.png' },
+  ],
 })
 
 const { public: { whatsappNumber } } = useRuntimeConfig()
@@ -52,12 +60,9 @@ onUnmounted(() => { if (intervalId) clearInterval(intervalId) })
       display:flex; align-items:center; justify-content:space-between;
     ">
       <a href="/" style="display:flex; align-items:center; gap:0.5rem; text-decoration:none;">
-        <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
-          <path d="M14 2C14 2 8 8 8 14.5C8 18.09 10.69 21 14 21C17.31 21 20 18.09 20 14.5C20 8 14 2 14 2Z" fill="#6B9972" opacity="0.8"/>
-          <path d="M14 21V26" stroke="#6B9972" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
+        <img src="/logo-massagem.png" alt="Viviana Tavares Massagem" style="height:40px; width:auto; border-radius:9999px;" />
         <span style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:1rem; color:#2D2825;">
-          Dra. Viviana Tavares
+          Viviana Tavares
         </span>
       </a>
 

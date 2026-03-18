@@ -40,6 +40,8 @@ gtag('config', 'G-6N9P11FETY');`,
         },
       ],
       link: [
+        { rel: 'icon', type: 'image/png', href: '/logo-massagem.png' },
+        { rel: 'apple-touch-icon', href: '/logo-massagem.png' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         {

@@ -234,9 +234,9 @@ onUnmounted(() => { if (intervalId) clearInterval(intervalId) })
 
         <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.25rem; margin-bottom:2.5rem;">
           <div v-for="item in [
-            { icon:'🔬', titulo:'Avaliação clínica', texto:'Escuta ativa, análise postural e mapeamento das suas queixas antes de qualquer toque.' },
-            { icon:'💆', titulo:'1h de massagem', texto:'Técnica e pressão escolhidas especificamente para o que seu corpo precisa naquele momento.' },
-            { icon:'🎯', titulo:'Plano terapêutico', texto:'Ao final, você sai com clareza sobre o que está causando seu desconforto e como resolver.' },
+            { icon:'🔬', titulo:'Avaliação corporal', texto:'Entendemos suas queixas, tensões e objetivos antes de começar a sessão.' },
+            { icon:'💆', titulo:'Massagem personalizada', texto:'Técnica e pressão escolhidas especificamente para o que seu corpo precisa naquele momento.' },
+            { icon:'✨', titulo:'Alívio imediato', texto:'Você sai mais leve, sem dor e com o corpo renovado já na primeira sessão.' },
           ]" :key="item.titulo" style="
             background:rgba(255,255,255,0.06); border-radius:1.25rem;
             padding:1.75rem 1.5rem; border:1px solid rgba(196,148,62,0.25);

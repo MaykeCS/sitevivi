@@ -394,7 +394,7 @@ onUnmounted(() => { if (intervalId) clearInterval(intervalId) })
             ">
               <p style="margin:0 0 0.5rem; font-weight:700; color:#2D2825; font-size:0.9rem;">🗺️ Como chegar</p>
               <ul style="margin:0; padding-left:1.25rem; color:#6B5E57; font-size:0.875rem; line-height:1.9;">
-                <li>Metrô Santa Cruz (Linha 2 – Verde) — <strong>~5 min a pé</strong></li>
+                <li>Metrô Santa Cruz (Linha 1 – Azul) — <strong>~5 min a pé</strong></li>
                 <li>Ônibus com parada na Domingos de Morais</li>
                 <li>Estacionamento nas proximidades</li>
               </ul>

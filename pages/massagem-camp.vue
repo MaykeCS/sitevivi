@@ -333,7 +333,6 @@ onUnmounted(() => { if (intervalId) clearInterval(intervalId) })
           <div v-for="d in [
             { icon:'🦴', titulo:'Anatomia e biomecânica', texto:'Conhecimento profundo da musculatura, articulações e fascias permite identificar a origem real da tensão ou dor.' },
             { icon:'🔬', titulo:'Avaliação clínica antes de tocar', texto:'Antes de cada sessão há uma escuta ativa. Histórico, postura e queixas são considerados para escolher a técnica certa.' },
-            { icon:'⚕️', titulo:'Segurança em casos complexos', texto:'Hérnias, lesões musculares, pós-cirúrgico, gestantes — situações que exigem cuidado especializado.' },
             { icon:'🎯', titulo:'Objetivo terapêutico real', texto:'A sessão não é padronizada. Cada escolha de pressão, área e técnica tem uma justificativa clínica.' },
           ]" :key="d.titulo" style="
             background:rgba(255,255,255,0.05); border-radius:1.25rem;

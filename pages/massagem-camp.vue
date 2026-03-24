@@ -297,8 +297,7 @@ onUnmounted(() => { if (intervalId) clearInterval(intervalId) })
 
         <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem;">
           <div v-for="m in [
-            { emoji:'🌿', titulo:'Massagem Relaxante', texto:'Técnicas suaves para liberação de tensão muscular e sensação de leveza e bem-estar.' },
-            { emoji:'💆', titulo:'Massagem Terapêutica', texto:'Trabalho direcionado em pontos de tensão e dor para alívio e bem-estar.' },
+            { emoji:'💆', titulo:'Massagem Terapêutica/Relaxante', texto:'Técnicas para alívio de tensão, dor muscular e sensação de leveza e bem-estar.' },
             { emoji:'🔥', titulo:'Liberação Miofascial', texto:'Técnica focada na fáscia muscular para mobilidade, alívio de dores crônicas e postura.' },
             { emoji:'🌊', titulo:'Drenagem Linfática', texto:'Estimula a circulação linfática, reduz inchaços e melhora a disposição do corpo.' },
           ]" :key="m.titulo" style="

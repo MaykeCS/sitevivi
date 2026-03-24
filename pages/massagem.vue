@@ -15,20 +15,19 @@ useHead({
   ],
 })
 
-const { public: { whatsappNumber } } = useRuntimeConfig()
-const whatsappLink = `https://wa.me/${whatsappNumber}`
-const whatsappMsg  = encodeURIComponent(
+const { link: waLink, phoneDisplay, trackClick } = useWhatsApp(
   'Olá, Dra. Viviana! Gostaria de saber mais sobre a massagem terapêutica e agendar uma sessão.'
 )
-const waLink = `${whatsappLink}?text=${whatsappMsg}`
+const trackWhatsApp = (location: string) => trackClick('massagem', location)
 
 const carouselImages = [
-  { src: 'https://images.pexels.com/photos/6560266/pexels-photo-6560266.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Compressas herbais — massagem relaxante' },
-  { src: 'https://images.pexels.com/photos/6187430/pexels-photo-6187430.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Massagem com compressa quente — spa terapêutico' },
-  { src: 'https://images.pexels.com/photos/10894305/pexels-photo-10894305.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Óleo nas mãos — massagem com óleos essenciais' },
-  { src: 'https://images.pexels.com/photos/6560280/pexels-photo-6560280.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Tratamento corporal — relaxamento e bem-estar' },
-  { src: 'https://images.pexels.com/photos/19641835/pexels-photo-19641835.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Sessão de massagem terapêutica profissional' },
-  { src: 'https://images.pexels.com/photos/275848/pexels-photo-275848.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Mãos aplicando massagem terapêutica' },
+  { src: '/espaco/vilamariana/espaco-01.jpg', alt: 'Espaço de atendimento — sala de massagem' },
+  { src: '/espaco/vilamariana/espaco-02.jpg', alt: 'Ambiente terapêutico — consultório Viviana Tavares' },
+  { src: '/espaco/vilamariana/espaco-03.jpg', alt: 'Sala de massagem terapêutica — Vila Mariana' },
+  { src: '/espaco/vilamariana/espaco-04.jpg', alt: 'Espaço de bem-estar — massagem em São Paulo' },
+  { src: '/espaco/vilamariana/espaco-05.jpg', alt: 'Ambiente de atendimento — Dra. Viviana Tavares' },
+  { src: '/espaco/vilamariana/espaco-06.jpg', alt: 'Consultório próximo ao Metrô Santa Cruz' },
+  { src: '/espaco/vilamariana/espaco-07.jpg', alt: 'Espaço terapêutico — Vila Mariana São Paulo' },
 ]
 
 const currentSlide = ref(0)
@@ -68,7 +67,7 @@ onUnmounted(() => { if (intervalId) clearInterval(intervalId) })
         </span>
       </a>
 
-      <a :href="waLink" target="_blank" rel="noopener" style="
+      <a :href="waLink" target="_blank" rel="noopener" @click="trackWhatsApp('header')" style="
         display:inline-flex; align-items:center; gap:0.5rem;
         background:#25D366; color:white; font-weight:700; font-size:0.875rem;
         padding:0.55rem 1.2rem; border-radius:9999px; text-decoration:none;
@@ -97,7 +96,7 @@ onUnmounted(() => { if (intervalId) clearInterval(intervalId) })
 
         <!-- Carrossel de imagens de massagem -->
         <div style="
-          width:280px; height:200px; border-radius:1.25rem; margin:0 auto 1.5rem;
+          width:min(640px, 90vw); aspect-ratio:3/2; height:auto; border-radius:1.25rem; margin:0 auto 1.5rem;
           overflow:hidden; position:relative;
           box-shadow:0 8px 32px rgba(196,148,62,0.3);
           border:3px solid rgba(196,148,62,0.25);
@@ -178,7 +177,7 @@ onUnmounted(() => { if (intervalId) clearInterval(intervalId) })
           ">{{ d }}</span>
         </div>
 
-        <a :href="waLink" target="_blank" rel="noopener" style="
+        <a :href="waLink" target="_blank" rel="noopener" @click="trackWhatsApp('hero')" style="
           display:inline-flex; align-items:center; gap:0.75rem;
           background:#25D366; color:white; font-weight:800; font-size:1.15rem;
           padding:1.1rem 2.4rem; border-radius:9999px; text-decoration:none;
@@ -349,6 +348,79 @@ onUnmounted(() => { if (intervalId) clearInterval(intervalId) })
       </div>
     </section>
 
+    <!-- ── LOCAL DE ATENDIMENTO ── -->
+    <section style="padding:4rem 1.5rem; background:white;">
+      <div style="max-width:820px; margin:0 auto;">
+        <p style="font-size:0.8rem; font-weight:700; color:#C4943E; text-transform:uppercase; letter-spacing:0.08em; text-align:center; margin:0 0 0.5rem;">
+          ✦ Localização
+        </p>
+        <h2 style="
+          font-family:'Cormorant Garamond',serif;
+          font-size:clamp(1.6rem,3vw,2.2rem);
+          font-weight:600; text-align:center;
+          color:#2D2825; margin:0 0 0.5rem;
+        ">Local de atendimento</h2>
+        <p style="text-align:center; font-size:0.95rem; color:#6B5E57; margin:0 0 2.5rem;">
+          Clínica bem localizada, de fácil acesso pelo metrô.
+        </p>
+
+        <div style="display:flex; flex-wrap:wrap; gap:2rem; align-items:stretch;">
+          <!-- Info -->
+          <div style="flex:1; min-width:260px; display:flex; flex-direction:column; gap:1rem;">
+            <div style="
+              background:#FDF8EE; border-radius:1.25rem; padding:1.5rem;
+              border:1px solid rgba(196,148,62,0.2);
+            ">
+              <div style="display:flex; align-items:flex-start; gap:0.75rem; margin-bottom:1.25rem;">
+                <span style="font-size:1.5rem; flex-shrink:0;">📍</span>
+                <div>
+                  <p style="margin:0; font-weight:700; color:#2D2825; font-size:1.05rem;">Rua Domingos de Morais, 2781</p>
+                  <p style="margin:0; color:#6B5E57; font-size:0.9rem;">Conjunto 706 · Vila Mariana · São Paulo</p>
+                </div>
+              </div>
+              <div style="
+                display:inline-flex; align-items:center; gap:0.5rem;
+                background:rgba(107,153,114,0.12); border:1px solid rgba(107,153,114,0.3);
+                color:#4A7050; font-size:0.85rem; font-weight:700;
+                padding:0.5rem 1.1rem; border-radius:9999px;
+              ">
+                🚇 Próximo ao Metrô Santa Cruz
+              </div>
+            </div>
+
+            <div style="
+              background:#EEF5EF; border-radius:1.25rem; padding:1.25rem 1.5rem;
+              border:1px solid rgba(107,153,114,0.2);
+            ">
+              <p style="margin:0 0 0.5rem; font-weight:700; color:#2D2825; font-size:0.9rem;">🗺️ Como chegar</p>
+              <ul style="margin:0; padding-left:1.25rem; color:#6B5E57; font-size:0.875rem; line-height:1.9;">
+                <li>Metrô Santa Cruz (Linha 2 – Verde) — <strong>~5 min a pé</strong></li>
+                <li>Ônibus com parada na Domingos de Morais</li>
+                <li>Estacionamento nas proximidades</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Mapa -->
+          <div style="
+            flex:2; min-width:280px; min-height:300px;
+            border-radius:1.25rem; overflow:hidden;
+            box-shadow:0 4px 20px rgba(107,153,114,0.15);
+            border:1px solid rgba(107,153,114,0.15);
+          ">
+            <iframe
+              src="https://maps.google.com/maps?q=Rua+Domingos+de+Morais+2781+Vila+Mariana+São+Paulo+SP&output=embed&hl=pt-BR"
+              style="width:100%; height:100%; min-height:300px; border:0; display:block;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Localização — Rua Domingos de Morais 2781, Vila Mariana, São Paulo"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ── CTA FINAL ── -->
     <section style="
       padding:4rem 1.5rem; text-align:center;
@@ -367,14 +439,14 @@ onUnmounted(() => { if (intervalId) clearInterval(intervalId) })
         <p style="color:rgba(255,255,255,0.88); margin:0 0 2rem; line-height:1.7;">
           Agende sua sessão agora pelo WhatsApp. Horários disponíveis durante a semana e fins de semana.
         </p>
-        <a :href="waLink" target="_blank" rel="noopener" style="
+        <a :href="waLink" target="_blank" rel="noopener" @click="trackWhatsApp('cta')" style="
           display:inline-flex; align-items:center; gap:0.75rem;
           background:white; color:#A67B2A; font-weight:800; font-size:1.1rem;
           padding:1rem 2.2rem; border-radius:9999px; text-decoration:none;
           box-shadow:0 6px 28px rgba(0,0,0,0.15);
         ">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          (11) 92469-6645
+          {{ phoneDisplay }}
         </a>
       </div>
     </section>
@@ -387,7 +459,7 @@ onUnmounted(() => { if (intervalId) clearInterval(intervalId) })
     </footer>
 
     <!-- ── BOTÃO FLUTUANTE WHATSAPP ── -->
-    <a :href="waLink" target="_blank" rel="noopener" style="
+    <a :href="waLink" target="_blank" rel="noopener" @click="trackWhatsApp('flutuante')" style="
       position:fixed; bottom:1.5rem; right:1.5rem; z-index:200;
       width:58px; height:58px; border-radius:9999px; background:#25D366;
       display:flex; align-items:center; justify-content:center;

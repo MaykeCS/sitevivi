@@ -234,9 +234,9 @@ onUnmounted(() => { if (intervalId) clearInterval(intervalId) })
 
         <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.25rem; margin-bottom:2.5rem;">
           <div v-for="item in [
-            { icon:'🔬', titulo:'Avaliação clínica', texto:'Escuta ativa, análise postural e mapeamento das suas queixas antes de qualquer toque.' },
-            { icon:'💆', titulo:'1h de massagem', texto:'Técnica e pressão escolhidas especificamente para o que seu corpo precisa naquele momento.' },
-            { icon:'🎯', titulo:'Plano terapêutico', texto:'Ao final, você sai com clareza sobre o que está causando seu desconforto e como resolver.' },
+            { icon:'🔬', titulo:'Avaliação corporal', texto:'Entendemos suas queixas, tensões e objetivos antes de começar a sessão.' },
+            { icon:'💆', titulo:'Massagem personalizada', texto:'Técnica e pressão escolhidas especificamente para o que seu corpo precisa naquele momento.' },
+            { icon:'✨', titulo:'Alívio imediato', texto:'Você sai mais leve, sem dor e com o corpo renovado já na primeira sessão.' },
           ]" :key="item.titulo" style="
             background:rgba(255,255,255,0.06); border-radius:1.25rem;
             padding:1.75rem 1.5rem; border:1px solid rgba(196,148,62,0.25);
@@ -297,8 +297,7 @@ onUnmounted(() => { if (intervalId) clearInterval(intervalId) })
 
         <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem;">
           <div v-for="m in [
-            { emoji:'🌿', titulo:'Massagem Relaxante', texto:'Técnicas suaves para liberação de tensão muscular e sensação de leveza e bem-estar.' },
-            { emoji:'💆', titulo:'Massagem Terapêutica', texto:'Trabalho direcionado em pontos de tensão e dor para alívio e bem-estar.' },
+            { emoji:'💆', titulo:'Massagem Terapêutica/Relaxante', texto:'Técnicas para alívio de tensão, dor muscular e sensação de leveza e bem-estar.' },
             { emoji:'🔥', titulo:'Liberação Miofascial', texto:'Técnica focada na fáscia muscular para mobilidade, alívio de dores crônicas e postura.' },
             { emoji:'🌊', titulo:'Drenagem Linfática', texto:'Estimula a circulação linfática, reduz inchaços e melhora a disposição do corpo.' },
           ]" :key="m.titulo" style="
@@ -334,7 +333,6 @@ onUnmounted(() => { if (intervalId) clearInterval(intervalId) })
           <div v-for="d in [
             { icon:'🦴', titulo:'Anatomia e biomecânica', texto:'Conhecimento profundo da musculatura, articulações e fascias permite identificar a origem real da tensão ou dor.' },
             { icon:'🔬', titulo:'Avaliação clínica antes de tocar', texto:'Antes de cada sessão há uma escuta ativa. Histórico, postura e queixas são considerados para escolher a técnica certa.' },
-            { icon:'⚕️', titulo:'Segurança em casos complexos', texto:'Hérnias, lesões musculares, pós-cirúrgico, gestantes — situações que exigem cuidado especializado.' },
             { icon:'🎯', titulo:'Objetivo terapêutico real', texto:'A sessão não é padronizada. Cada escolha de pressão, área e técnica tem uma justificativa clínica.' },
           ]" :key="d.titulo" style="
             background:rgba(255,255,255,0.05); border-radius:1.25rem;
@@ -394,7 +392,7 @@ onUnmounted(() => { if (intervalId) clearInterval(intervalId) })
             ">
               <p style="margin:0 0 0.5rem; font-weight:700; color:#2D2825; font-size:0.9rem;">🗺️ Como chegar</p>
               <ul style="margin:0; padding-left:1.25rem; color:#6B5E57; font-size:0.875rem; line-height:1.9;">
-                <li>Metrô Santa Cruz (Linha 2 – Verde) — <strong>~5 min a pé</strong></li>
+                <li>Metrô Santa Cruz (Linha 1 – Azul) — <strong>~5 min a pé</strong></li>
                 <li>Ônibus com parada na Domingos de Morais</li>
                 <li>Estacionamento nas proximidades</li>
               </ul>
@@ -463,6 +461,16 @@ onUnmounted(() => { if (intervalId) clearInterval(intervalId) })
         © {{ new Date().getFullYear() }} Dra. Viviana Tavares Campos · CREFITO 450602-F · Massagem Terapêutica · São Paulo
       </p>
     </footer>
+
+    <!-- ── BOTÃO FLUTUANTE LOCALIZAÇÃO ── -->
+    <a href="https://maps.google.com/maps?q=Rua+Domingos+de+Morais+2781+Vila+Mariana+São+Paulo+SP" target="_blank" rel="noopener" style="
+      position:fixed; bottom:1.5rem; left:1.5rem; z-index:200;
+      width:58px; height:58px; border-radius:9999px; background:#C4943E;
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:0 4px 20px rgba(196,148,62,0.5); text-decoration:none;
+    " aria-label="Ver localização no mapa">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+    </a>
 
     <!-- ── BOTÃO FLUTUANTE WHATSAPP ── -->
     <a :href="waLink" target="_blank" rel="noopener" @click="trackWhatsApp('flutuante')" style="

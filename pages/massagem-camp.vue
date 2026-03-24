@@ -464,6 +464,16 @@ onUnmounted(() => { if (intervalId) clearInterval(intervalId) })
       </p>
     </footer>
 
+    <!-- ── BOTÃO FLUTUANTE LOCALIZAÇÃO ── -->
+    <a href="https://maps.google.com/maps?q=Rua+Domingos+de+Morais+2781+Vila+Mariana+São+Paulo+SP" target="_blank" rel="noopener" style="
+      position:fixed; bottom:1.5rem; left:1.5rem; z-index:200;
+      width:58px; height:58px; border-radius:9999px; background:#C4943E;
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:0 4px 20px rgba(196,148,62,0.5); text-decoration:none;
+    " aria-label="Ver localização no mapa">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+    </a>
+
     <!-- ── BOTÃO FLUTUANTE WHATSAPP ── -->
     <a :href="waLink" target="_blank" rel="noopener" @click="trackWhatsApp('flutuante')" style="
       position:fixed; bottom:1.5rem; right:1.5rem; z-index:200;

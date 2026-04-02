@@ -668,6 +668,81 @@ onMounted(() => {
     -->
 
     <!-- ═══════════════════════════════════════════════════════════ -->
+    <!--  LOCAL DE ATENDIMENTO                                       -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <section style="padding:4rem 1.5rem; background:white;">
+      <div style="max-width:820px; margin:0 auto;">
+        <p style="font-size:0.8rem; font-weight:700; color:#C4943E; text-transform:uppercase; letter-spacing:0.08em; text-align:center; margin:0 0 0.5rem;">
+          ✦ Localização
+        </p>
+        <h2 style="
+          font-family:'Cormorant Garamond',serif;
+          font-size:clamp(1.6rem,3vw,2.2rem);
+          font-weight:600; text-align:center;
+          color:#2D2825; margin:0 0 0.5rem;
+        ">Local de atendimento</h2>
+        <p style="text-align:center; font-size:0.95rem; color:#6B5E57; margin:0 0 2.5rem;">
+          Clínica bem localizada, de fácil acesso pelo metrô.
+        </p>
+
+        <div style="display:flex; flex-wrap:wrap; gap:2rem; align-items:stretch;">
+          <!-- Info -->
+          <div style="flex:1; min-width:260px; display:flex; flex-direction:column; gap:1rem;">
+            <div style="
+              background:#FDF8EE; border-radius:1.25rem; padding:1.5rem;
+              border:1px solid rgba(196,148,62,0.2);
+            ">
+              <div style="display:flex; align-items:flex-start; gap:0.75rem; margin-bottom:1.25rem;">
+                <span style="font-size:1.5rem; flex-shrink:0;">📍</span>
+                <div>
+                  <p style="margin:0; font-weight:700; color:#2D2825; font-size:1.05rem;">Rua Domingos de Morais, 2781</p>
+                  <p style="margin:0; color:#6B5E57; font-size:0.9rem;">Conjunto 706 · Vila Mariana · São Paulo</p>
+                </div>
+              </div>
+              <div style="
+                display:inline-flex; align-items:center; gap:0.5rem;
+                background:rgba(107,153,114,0.12); border:1px solid rgba(107,153,114,0.3);
+                color:#4A7050; font-size:0.85rem; font-weight:700;
+                padding:0.5rem 1.1rem; border-radius:9999px;
+              ">
+                🚇 Próximo ao Metrô Santa Cruz
+              </div>
+            </div>
+
+            <div style="
+              background:#EEF5EF; border-radius:1.25rem; padding:1.25rem 1.5rem;
+              border:1px solid rgba(107,153,114,0.2);
+            ">
+              <p style="margin:0 0 0.5rem; font-weight:700; color:#2D2825; font-size:0.9rem;">🗺️ Como chegar</p>
+              <ul style="margin:0; padding-left:1.25rem; color:#6B5E57; font-size:0.875rem; line-height:1.9;">
+                <li>Metrô Santa Cruz (Linha 1 – Azul) — <strong>~5 min a pé</strong></li>
+                <li>Ônibus com parada na Domingos de Morais</li>
+                <li>Estacionamento nas proximidades</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Mapa -->
+          <div style="
+            flex:2; min-width:280px; min-height:300px;
+            border-radius:1.25rem; overflow:hidden;
+            box-shadow:0 4px 20px rgba(107,153,114,0.15);
+            border:1px solid rgba(107,153,114,0.15);
+          ">
+            <iframe
+              src="https://maps.google.com/maps?q=Rua+Domingos+de+Morais+2781+Vila+Mariana+São+Paulo+SP&output=embed&hl=pt-BR"
+              style="width:100%; height:100%; min-height:300px; border:0; display:block;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Localização — Rua Domingos de Morais 2781, Vila Mariana, São Paulo"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
     <!--  CTA FINAL                                                  -->
     <!-- ═══════════════════════════════════════════════════════════ -->
     <section id="contato" class="relative py-16 md:py-28 overflow-hidden grain-overlay" style="background:#6B9972;">

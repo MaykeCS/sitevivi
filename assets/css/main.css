@@ -255,6 +255,11 @@ body {
   box-shadow: 0 2px 16px rgba(107, 153, 114, 0.08);
   border: 1px solid rgba(107, 153, 114, 0.1);
   position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(107, 153, 114, 0.16);
 }
 .testimonial-card::before {
   content: '"';
